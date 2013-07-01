@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+       android:layout_width="fill_parent"
+       android:layout_height="fill_parent"
+       android:orientation="vertical">
+        <!--body wrapper-->
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+            
+            <!-- content slides area -->
+            <AbsoluteLayout
+              android:id="@+id/index_body_layout"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:background="@drawable/index_bg"
+              android:layout_alignParentTop="true">
+
+              <!-- slides -->
+
+            </AbsoluteLayout>
+
+
+            <!-- align to the bottom button groups -->
+            <AbsoluteLayout
+              android:id="@+id/layout_top"
+              android:layout_width="fill_parent"
+              android:layout_height="100dp"
+              android:layout_alignParentBottom="true">
+
+              <LinearLayout
+                android:layout_height="fill_parent"
+                android:layout_width="fill_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+                
+                <TextView 
+                  android:id="@+id/index_login_btn"
+                  android:background="@drawable/index_btn_bg"
+                  android:layout_width="120dp"
+                  android:layout_height="60dp"
+                  android:gravity="center"
+                  android:layout_weight="1"
+                  android:textColor="#65a6b8"
+                  android:textSize="18dp"
+                  android:text="Login in"/>
+
+                <TextView 
+                  android:id="@+id/index_regist_btn"
+                  android:background="@drawable/index_btn_bg"
+                  android:layout_width="120dp"
+                  android:layout_height="60dp"
+                  android:gravity="center"
+                  android:layout_weight="1"
+                  android:textColor="#65a6b8"
+                  android:textSize="18dp"
+                  android:text="Sign up"/>
+              
+              </LinearLayout>
+            </AbsoluteLayout>
+        </RelativeLayout>
+</LinearLayout>

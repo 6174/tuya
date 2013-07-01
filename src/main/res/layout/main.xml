@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+       android:layout_width="fill_parent"
+       android:layout_height="fill_parent"
+       android:orientation="vertical">
+       
+       <!--body wrapper-->
+       <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <!--align to the top
+              ===================================================================
+            -->            
+            <LinearLayout
+              android:id="@+id/layout_top"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:background="#00ff00"
+              android:layout_alignParentTop="true">
+              <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/textview"
+                android:background="#00ff00"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"/>
+            </LinearLayout>
+
+
+            <!--center-layout
+              ===================================================================
+            -->
+            <AbsoluteLayout
+              android:id="@+id/pic_body_layout"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:layout_below="@+id/layout_top">
+
+              <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#fefefe"
+                android:gravity="center"
+                android:text="This is the body"/>
+
+            </AbsoluteLayout>
+
+
+
+            <!--align to the bottom
+              ===================================================================
+            -->
+            <RelativeLayout
+              android:layout_width="fill_parent"
+              android:layout_height="60dp"
+              android:layout_alignParentBottom="true">
+
+
+              <TextView
+                android:layout_width="80dp"
+                android:layout_height="fill_parent"
+                android:background="@drawable/btn_bg"
+                android:text="Send"
+                android:textSize="20dp"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:id="@+id/sendBtn"/>
+
+              <HorizontalScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_toRightOf="@+id/sendBtn"
+                android:background="#88212121">
+
+                <LinearLayout
+                  android:layout_height="fill_parent"
+                  android:layout_width="fill_parent"
+                  android:orientation="horizontal">
+                  <!-- android:scrollbarAlwaysDrawHorizontalTrack="false"> -->
+
+                  <TextView 
+                    android:id="@+id/openImageGallaryBtn"
+                    android:background="@drawable/btn_open_image_gallary"
+                    android:layout_width="60dp"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"/>
+
+                   <TextView 
+                    android:id="@+id/btn_add_voice"
+                    android:background="@drawable/btn_add_voice"
+                    android:gravity="center"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"/>
+                
+                  <TextView 
+                    android:id="@+id/btn_add_text"
+                    android:background="@drawable/btn_add_text"
+                    android:gravity="center"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"/>
+                
+                  <TextView 
+                    android:id="@+id/btn_open_camera"
+                    android:background="@drawable/btn_open_camera"
+                    android:gravity="center"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"/>
+
+                  <TextView 
+                    android:id="@+id/btn_add_info"
+                    android:background="@drawable/btn_add_info"
+                    android:gravity="center"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"/>
+
+                </LinearLayout>
+              </HorizontalScrollView>
+
+          </RelativeLayout>
+
+       </RelativeLayout>
+  </LinearLayout>

@@ -1,0 +1,1 @@
+[0m[[0mdebug[0m] [0m/home/cxj/softwares/android/sdk/platform-tools/adb -e install -r  /home/cxj/workspace/android-workspace/hello/target/hello-0.1.apk[0m

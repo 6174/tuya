@@ -1,0 +1,22 @@
+[0m[[0minfo[0m] [0mPackaging /home/cxj/workspace/android-workspace/hello/target/hello-0.1.apk[0m
+[0m[[0mdebug[0m] [0mUsing keystore: /home/cxj/.android/debug.keystore[0m
+[0m[[0mdebug[0m] [0mPackaging hello-0.1.apk[0m
+[0m[[0mdebug[0m] [0m/home/cxj/workspace/android-workspace/hello/target/resources.apk:[0m
+[0m[[0mdebug[0m] [0m=> assets/btn_bg.png[0m
+[0m[[0mdebug[0m] [0m=> res/drawable/btn_add_info.png[0m
+[0m[[0mdebug[0m] [0m=> res/drawable/btn_add_text.png[0m
+[0m[[0mdebug[0m] [0m=> res/drawable/btn_add_voice.png[0m
+[0m[[0mdebug[0m] [0m=> res/drawable/btn_bg.png[0m
+[0m[[0mdebug[0m] [0m=> res/drawable/btn_open_camera.png[0m
+[0m[[0mdebug[0m] [0m=> res/drawable/btn_open_image_gallary.png[0m
+[0m[[0mdebug[0m] [0m=> res/drawable/index_bg.png[0m
+[0m[[0mdebug[0m] [0m=> res/drawable/index_btn_bg.png[0m
+[0m[[0mdebug[0m] [0m=> res/drawable/intro_slide1.png[0m
+[0m[[0mdebug[0m] [0m=> res/layout/confirm_dialog.xml[0m
+[0m[[0mdebug[0m] [0m=> res/layout/index.xml[0m
+[0m[[0mdebug[0m] [0m=> res/layout/main.xml[0m
+[0m[[0mdebug[0m] [0m=> AndroidManifest.xml[0m
+[0m[[0mdebug[0m] [0m=> resources.arsc[0m
+[0m[[0mdebug[0m] [0m/home/cxj/workspace/android-workspace/hello/target/classes.dex => classes.dex[0m
+[0m[[0mdebug[0m] [0m/home/cxj/workspace/android-workspace/hello/target/classes.min.jar:[0m
+[0m[[0mdebug[0m] [0m=> library.properties[0m

@@ -1,0 +1,11 @@
+android:package-debug
+exit
+android:package-debug
+android:emulator-start api17
+android:emulator-start 
+android:emulator-start api17
+android:emulator-start  api17
+android:emulator-start  api10
+android:start-emulator
+android:package
+android:package-debug
