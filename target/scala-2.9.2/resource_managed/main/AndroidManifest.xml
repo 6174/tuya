@@ -2,15 +2,13 @@
 
     <application android:debuggable="true" android:label="@string/app_name" android:icon="@drawable/android:star_big_on">
 
-        <activity android:name=".indexActivity" android:label="@string/app_name">
+        <activity android:name=".loginActivity" android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"></action>
                 <category android:name="android.intent.category.LAUNCHER"></category>
             </intent-filter>
         </activity>
 
-        <activity android:name=".loginActivity">
-        </activity>
     </application>
     <uses-sdk android:minSdkVersion="10"></uses-sdk>
 </manifest>

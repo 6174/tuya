@@ -20,12 +20,12 @@ class loginActivity extends Activity with TypedActivity {
     super.onCreate(bundle)
     requestWindowFeature(Window.FEATURE_NO_TITLE)
     setContentView(R.layout.login)
-    
+    Log.i("chxjia", "start loginActivity")
     // activity will shut down if there is no TR.textView
     // findView(TR.textview).setText("hello, world!")
     // init()
-    val intent = getIntent()
-    val data = intent.getStringExtra("extra")
-    Log.i("chxjia", "startLoginActivity with extra data:" + data)
+    // val intent = getIntent()
+    // val data = intent.getStringExtra("extra")
+    // Log.i("chxjia", "startLoginActivity with extra data:" + data)
   }
 }

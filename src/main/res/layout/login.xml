@@ -3,15 +3,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
        android:layout_width="fill_parent"
        android:layout_height="fill_parent"
+       android:background="@drawable/login_bg"
        android:orientation="vertical">
-        <!-- android:background="@drawable/login_bg" -->
         <!-- logo area -->
         <LinearLayout
           android:id="@+id/layout_top"
           android:layout_width="fill_parent"
           android:layout_height="300dp"
-          android:layout_alignParentTop="true"
-          android:background="#f0f0f0">
+          android:layout_alignParentTop="true">
           <ImageView
               android:id="@+id/login_logo"
               android:layout_height="wrap_content"
@@ -24,31 +23,131 @@
         <LinearLayout
           android:id="@+id/login_form_layout"
           android:layout_width="fill_parent"
-          android:layout_height="200dp"
-          android:background="#fefefe">
-          <TableLayout
+          android:layout_height="400dp"
+          android:orientation="vertical">
+          <!-- android:background="#fefefe"> -->
+         
+          <!-- row -->
+          <RelativeLayout
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
-            <TableRow>
-              <EditText
-                android:id="@+id/login_name_filed"
-                android:text="row1"
-                android:background="#ff1100"
-                android:layout_width="fill_parent"
-                android:layout_height="60dp"
-                android:padding="1dp"/>
-            </TableRow>
-            <TableRow> 
-              <TextView 
-                android:id="@+id/textviewasd"
-                android:background="#00fff3"
-                android:layout_width="fill_parent"
-                android:layout_height="60dp"
+            android:layout_height="60dp">
+            <!-- android:background="#111111"> -->
+            <!-- if not set layout_height or layout_width, activity will shut down -->
+            <!-- left-placeholder -->
+            <View 
+              android:id="@+id/left_holder1"
+              android:layout_width="40dp"
+              android:layout_height="fill_parent" 
+              android:layout_alignParentLeft="true"/>
+            <View 
+              android:id="@+id/right_holder"
+              android:layout_width="40dp"
+              android:layout_height="fill_parent" 
+              android:layout_alignParentRight="true"/>
+            <EditText
+              android:id="@+id/login_name_filed"
+              android:text="your name"
+              android:background="#fefefe"
+              android:layout_width="fill_parent"
+              android:layout_height="60dp"
+              android:layout_toLeftOf="@+id/right_holder"
+              android:layout_toRightOf="@+id/left_holder1"
+              android:padding="4dp"/>
+            <!-- right-placeholder -->
+            <!-- <View android:width="10dp" android:background="#ff0000"/> -->
+          </RelativeLayout>
+
+          <!-- row2 -->
+          <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_marginTop="2dp"
+            android:layout_height="60dp">
+            <!-- duplicate id is allowed for View and EditText can align to View -->
+            <View 
+              android:id="@+id/left_holder1"
+              android:layout_width="40dp"
+              android:layout_height="fill_parent" 
+              android:layout_alignParentLeft="true"/>
+            <View 
+              android:id="@+id/right_holder"
+              android:layout_width="40dp"
+              android:layout_height="fill_parent" 
+              android:layout_alignParentRight="true"/>
+              <!-- android:background="#ff0000" -->
+            <EditText
+              android:id="@+id/login_password_filed"
+              android:text="your password"
+              android:background="#fefefe"
+              android:layout_width="fill_parent"
+              android:layout_height="60dp"
+              android:layout_toLeftOf="@+id/right_holder"
+              android:layout_toRightOf="@+id/left_holder1"
+              android:padding="4dp"/>
+            <!-- right-placeholder -->
+            <!-- <View android:width="10dp" android:background="#ff0000"/> -->
+          </RelativeLayout>
+
+          <!-- row3 -->
+          <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="40dp">
+            <TextView
+              android:id="@+id/login_forget_password_btn"
+              android:text="Forget password?"
+              android:layout_height="wrap_content"
+              android:layout_width="wrap_content"
+              android:gravity="center"
+              android:layout_marginRight="40dp"
+              android:padding="4dp"
+              android:layout_alignParentRight="true"/>
+          </RelativeLayout>
+
+          <!-- row4 -->
+          <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="60dp">
+            <View 
+              android:id="@+id/right_holder"
+              android:layout_width="40dp"
+              android:layout_height="fill_parent" 
+              android:layout_alignParentRight="true"/>
+            <View 
+              android:id="@+id/left_holder1"
+              android:layout_width="40dp"
+              android:layout_height="fill_parent" 
+              android:layout_alignParentLeft="true"/>
+            <LinearLayout
+              android:layout_weight="1"
+              android:layout_height="60dp"
+              android:layout_width="fill_parent"
+              android:layout_toRightOf="@+id/left_holder1"
+              android:layout_toLeftOf="@+id/right_holder"
+              >
+              <TextView
+                android:id="@+id/login_login_btn"
+                android:text="Sign In"
+                android:background="@drawable/default_green_btn"
+                android:layout_width="0dp"
+                android:textColor="#ffffff"
+                android:layout_height="fill_parent"
                 android:gravity="center"
-                android:text="login"/>
-            </TableRow>
-            <TableRow> </TableRow>
-            <TableRow> </TableRow>
-          </TableLayout>
+                android:layout_weight="1"/>
+              <TextView
+                android:id="@+id/login_signup_btn"
+                android:text="Sign Up"
+                android:background="@drawable/default_white_btn"
+                android:layout_width="0dp"
+                android:textColor="#028f6b"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:layout_weight="1"/>
+            </LinearLayout>
+
+          </RelativeLayout>
+
+
+
+          
+
         </LinearLayout>
 </LinearLayout>
