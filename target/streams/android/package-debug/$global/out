@@ -9,11 +9,17 @@
 [0m[[0mdebug[0m] [0m=> res/drawable/btn_bg.png[0m
 [0m[[0mdebug[0m] [0m=> res/drawable/btn_open_camera.png[0m
 [0m[[0mdebug[0m] [0m=> res/drawable/btn_open_image_gallary.png[0m
+[0m[[0mdebug[0m] [0m=> res/drawable/default_green_btn.png[0m
+[0m[[0mdebug[0m] [0m=> res/drawable/default_white_btn.png[0m
 [0m[[0mdebug[0m] [0m=> res/drawable/index_bg.png[0m
 [0m[[0mdebug[0m] [0m=> res/drawable/index_btn_bg.png[0m
+[0m[[0mdebug[0m] [0m=> res/drawable/index_slide_1.png[0m
 [0m[[0mdebug[0m] [0m=> res/drawable/intro_slide1.png[0m
+[0m[[0mdebug[0m] [0m=> res/drawable/login_bg.png[0m
+[0m[[0mdebug[0m] [0m=> res/drawable/login_logo.png[0m
 [0m[[0mdebug[0m] [0m=> res/layout/confirm_dialog.xml[0m
 [0m[[0mdebug[0m] [0m=> res/layout/index.xml[0m
+[0m[[0mdebug[0m] [0m=> res/layout/login.xml[0m
 [0m[[0mdebug[0m] [0m=> res/layout/main.xml[0m
 [0m[[0mdebug[0m] [0m=> AndroidManifest.xml[0m
 [0m[[0mdebug[0m] [0m=> resources.arsc[0m

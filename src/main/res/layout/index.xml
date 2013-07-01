@@ -44,7 +44,7 @@
                   android:layout_weight="1"
                   android:textColor="#65a6b8"
                   android:textSize="18dp"
-                  android:text="Login in"/>
+                  android:text="Sign in"/>
 
                 <TextView 
                   android:id="@+id/index_regist_btn"

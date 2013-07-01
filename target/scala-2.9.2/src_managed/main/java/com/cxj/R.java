@@ -17,29 +17,38 @@ public final class R {
         public static final int btn_bg=0x7f020003;
         public static final int btn_open_camera=0x7f020004;
         public static final int btn_open_image_gallary=0x7f020005;
-        public static final int index_bg=0x7f020006;
-        public static final int index_btn_bg=0x7f020007;
-        public static final int intro_slide1=0x7f020008;
+        public static final int default_green_btn=0x7f020006;
+        public static final int default_white_btn=0x7f020007;
+        public static final int index_bg=0x7f020008;
+        public static final int index_btn_bg=0x7f020009;
+        public static final int index_slide_1=0x7f02000a;
+        public static final int intro_slide1=0x7f02000b;
+        public static final int login_bg=0x7f02000c;
+        public static final int login_logo=0x7f02000d;
     }
     public static final class id {
-        public static final int btn_add_info=0x7f05000c;
-        public static final int btn_add_text=0x7f05000a;
-        public static final int btn_add_voice=0x7f050009;
-        public static final int btn_open_camera=0x7f05000b;
+        public static final int btn_add_info=0x7f05000f;
+        public static final int btn_add_text=0x7f05000d;
+        public static final int btn_add_voice=0x7f05000c;
+        public static final int btn_open_camera=0x7f05000e;
         public static final int index_body_layout=0x7f050002;
         public static final int index_login_btn=0x7f050003;
         public static final int index_regist_btn=0x7f050004;
         public static final int layout_top=0x7f050000;
-        public static final int openImageGallaryBtn=0x7f050008;
-        public static final int pic_body_layout=0x7f050006;
-        public static final int sendBtn=0x7f050007;
-        public static final int textview=0x7f050005;
+        public static final int login_form_layout=0x7f050006;
+        public static final int login_logo=0x7f050005;
+        public static final int login_name_filed=0x7f050007;
+        public static final int openImageGallaryBtn=0x7f05000b;
+        public static final int pic_body_layout=0x7f050009;
+        public static final int sendBtn=0x7f05000a;
+        public static final int textview=0x7f050008;
         public static final int textviewasd=0x7f050001;
     }
     public static final class layout {
         public static final int confirm_dialog=0x7f030000;
         public static final int index=0x7f030001;
-        public static final int main=0x7f030002;
+        public static final int login=0x7f030002;
+        public static final int main=0x7f030003;
     }
     public static final class string {
         public static final int app_name=0x7f040000;

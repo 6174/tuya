@@ -17,11 +17,15 @@ object TR {
   val btn_open_camera = TypedResource[android.widget.TextView](R.id.btn_open_camera)
   val btn_add_info = TypedResource[android.widget.TextView](R.id.btn_add_info)
   val pic_body_layout = TypedResource[android.widget.AbsoluteLayout](R.id.pic_body_layout)
+  val login_logo = TypedResource[android.widget.ImageView](R.id.login_logo)
+  val login_name_filed = TypedResource[android.widget.EditText](R.id.login_name_filed)
   val index_regist_btn = TypedResource[android.widget.TextView](R.id.index_regist_btn)
   val textview = TypedResource[android.widget.TextView](R.id.textview)
+  val login_form_layout = TypedResource[android.widget.LinearLayout](R.id.login_form_layout)
  object layout {
   val main = TypedLayout(R.layout.main)
  val confirm_dialog = TypedLayout(R.layout.confirm_dialog)
+ val login = TypedLayout(R.layout.login)
  val index = TypedLayout(R.layout.index)
  }
 }

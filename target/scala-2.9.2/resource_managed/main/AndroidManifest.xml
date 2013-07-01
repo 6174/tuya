@@ -8,6 +8,9 @@
                 <category android:name="android.intent.category.LAUNCHER"></category>
             </intent-filter>
         </activity>
+
+        <activity android:name=".loginActivity">
+        </activity>
     </application>
     <uses-sdk android:minSdkVersion="10"></uses-sdk>
 </manifest>
