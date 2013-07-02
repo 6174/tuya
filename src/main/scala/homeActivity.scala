@@ -52,19 +52,29 @@ class homeActivity extends Activity with TypedActivity {
   }
 
   def testSimpleAdapter() = {
-    val data = Array(
-        Map("title" -> "hha"), 
-        Map("title" -> "wowo"),
-        Map("title" -> "haoba"))
+    val size = 20
+    val data = new Array[Map[String, String]](size)
+    // Map("title" -> "wowo", "info" -> "hahahhaha"),
+    // Map("title" -> "haoba", "info" -> "so what"))
+    for(i <- 0 until size) {
+      data(i) = Map("title" -> "hha", "info" -> "today is a nice day")
+    }
     val adapter = new TuyaDynamicListAdapter(this, data)
     dynamic_list.setAdapter(adapter)
   }
 }
 
+/**
+ *@DESC ViewHolder  hold the view elements of dynamic list item
+ */
 class ViewHolder{
   var title:TextView = _
   var img: ImageView = _
-}
+  var info: TextView = _
+} 
+/**
+ *@DESC adapter to the dynamic_list
+ */
 class TuyaDynamicListAdapter(
   val context:Context , 
   val data:Array[Map[String, String]] ) extends BaseAdapter {
@@ -82,11 +92,13 @@ class TuyaDynamicListAdapter(
       holder = new ViewHolder()
       view = inflater.inflate(this.layout, null)
       holder.title = view.findViewById(R.id.title).asInstanceOf[TextView]
+      holder.info = view.findViewById(R.id.info).asInstanceOf[TextView]
       view.setTag(holder)
     } else {
       holder = view.getTag().asInstanceOf[ViewHolder] 
     }
     holder.title.setText(data(position)("title"))
+    holder.info.setText(data(position)("info"))
     view
   } 
 }
