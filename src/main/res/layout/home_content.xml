@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--home content-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/home__content_layout"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:layout_alignParentTop="true"
+  android:layout_above="@+id/home_bottom_layout"
+  android:visibility="visible">
+  <!-- before using scala to change visibility , we have to set it first -->
+  <!-- top-bar -->
+  <LinearLayout
+    android:id="@+id/home_top_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="50dp"
+    android:background="@drawable/nav_top_bar"
+    android:layout_alignParentTop="true">
+    <TextView 
+      android:id="@+id/textviewasd"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:gravity="center"
+      android:text="tuya"
+      android:textColor="#ffffff"
+      android:textStyle="bold"/>
+  </LinearLayout>
+
+  <!-- content -->
+  <LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_below="@+id/home_top_layout"
+    android:orientation="vertical">
+
+    <ListView
+      android:id="@+id/home_dynamic_state_list"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:fadingEdge="none"
+      android:cacheColorHint="#00000000"/>
+  </LinearLayout>
+</RelativeLayout>

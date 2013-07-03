@@ -9,6 +9,7 @@
 [0m[[0mdebug[0m] [0m=> res/drawable/btn_bg.png[0m
 [0m[[0mdebug[0m] [0m=> res/drawable/btn_open_camera.png[0m
 [0m[[0mdebug[0m] [0m=> res/drawable/btn_open_image_gallary.png[0m
+[0m[[0mdebug[0m] [0m=> res/drawable/contact_photo.jpg[0m
 [0m[[0mdebug[0m] [0m=> res/drawable/default_green_btn.png[0m
 [0m[[0mdebug[0m] [0m=> res/drawable/default_white_btn.png[0m
 [0m[[0mdebug[0m] [0m=> res/drawable/icon_contact.png[0m
@@ -24,8 +25,11 @@
 [0m[[0mdebug[0m] [0m=> res/drawable/login_logo.png[0m
 [0m[[0mdebug[0m] [0m=> res/drawable/nav_bottom_bar.png[0m
 [0m[[0mdebug[0m] [0m=> res/drawable/nav_top_bar.png[0m
+[0m[[0mdebug[0m] [0m=> res/layout/bottom_bar.xml[0m
 [0m[[0mdebug[0m] [0m=> res/layout/confirm_dialog.xml[0m
+[0m[[0mdebug[0m] [0m=> res/layout/contacts_content.xml[0m
 [0m[[0mdebug[0m] [0m=> res/layout/home.xml[0m
+[0m[[0mdebug[0m] [0m=> res/layout/home_content.xml[0m
 [0m[[0mdebug[0m] [0m=> res/layout/home_dynamic_state_list_item.xml[0m
 [0m[[0mdebug[0m] [0m=> res/layout/index.xml[0m
 [0m[[0mdebug[0m] [0m=> res/layout/login.xml[0m

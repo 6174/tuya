@@ -9,3 +9,5 @@ android:emulator-start  api10
 android:start-emulator
 android:package
 android:package-debug
+package
+android:package-debug

@@ -21,6 +21,10 @@ import com.cxj.util._
 
 class homeActivity extends Activity with TypedActivity {
 	lazy val dynamic_list = findView(TR.home_dynamic_state_list)
+  lazy val home_content_layout = findView(TR.home__content_layout)
+  lazy val contacts_content_layout = findView(TR.contacts_content_layout)
+  lazy val bottom_nav_home_btn = findView(TR.bottom_nav_home_btn)
+  lazy val bottom_nav_contacts_btn = findView(TR.bottom_nav_contacts_btn)
   /**
    *@method onCreate
    */
@@ -39,6 +43,7 @@ class homeActivity extends Activity with TypedActivity {
 
   def init() = {
     testSimpleAdapter()
+    setNavEvents()
   }
 
   def testArrayAdapter() = {
@@ -51,6 +56,9 @@ class homeActivity extends Activity with TypedActivity {
     dynamic_list.setAdapter(adapter)
   }
 
+  /**
+   *@DESC set dynamic adapter
+   */
   def testSimpleAdapter() = {
     val size = 20
     val data = new Array[Map[String, String]](size)
@@ -61,6 +69,29 @@ class homeActivity extends Activity with TypedActivity {
     }
     val adapter = new TuyaDynamicListAdapter(this, data)
     dynamic_list.setAdapter(adapter)
+  }
+
+  /**
+   *@DESC set navigation events 
+   */
+  def setNavEvents() = {
+    //0 -> visible 4 -> invisible 8 -> gone
+    //nav to home
+    bottom_nav_home_btn.setOnClickListener(new View.OnClickListener() {
+        def onClick(view: View)  {
+          Log.i("chxjia", "nav to home")
+          home_content_layout.setVisibility(View.VISIBLE)
+          contacts_content_layout.setVisibility(View.GONE)
+        }
+    })
+    //nav to contacts
+    bottom_nav_contacts_btn.setOnClickListener(new View.OnClickListener() {
+        def onClick(view: View)  {
+          Log.i("chjxia", "nav to contacts")
+          home_content_layout.setVisibility(View.GONE)
+          contacts_content_layout.setVisibility(View.VISIBLE) 
+        }
+    })
   }
 }
 
