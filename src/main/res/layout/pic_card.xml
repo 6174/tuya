@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:padding="10dp"
+       android:layout_marginBottom="30dp"
+       android:orientation="vertical">       
+      <!-- card-title -->
+      <RelativeLayout
+        android:id="@+id/pic_card_title_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:padding="2dp">
+        <!-- android:background="#fffff" -->
+        <ImageView
+          android:id="@+id/pic_user_img"
+          android:layout_width="38dp"
+          android:layout_marginRight="4dp"
+          android:layout_height="38dp"/>
+        <TextView
+          android:id="@+id/pic_user_name"
+          android:textColor="#121212"
+          android:textStyle="bold"
+          android:textSize="14dp"
+          android:text="user name"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="4dp"
+          android:layout_alignParentBottom="true"
+          android:layout_toRightOf="@+id/pic_user_img"/>
+      </RelativeLayout>
+      <!--card-content-->
+      <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="240dp">
+            <LinearLayout
+              android:id="@+id/layout_top"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="#00ff00"
+              android:layout_alignParentTop="true">
+              <TextView 
+                android:id="@+id/textviewasd"
+                android:background="#00fff3"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="pic card"/>
+            </LinearLayout>
+      </RelativeLayout>
+
+
+      <!-- card-info -->
+      <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="26dp"
+        android:background="#ffffff"
+        android:padding="4dp">
+        <TextView
+          android:id="@+id/pic_card_info"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="10 TEXT | 5 sounds"
+          android:textColor="#121212"
+          android:textStyle="bold"
+          android:layout_alignParentLeft="true"/>
+        <TextView
+          android:id="@+id/pic_card_info_time"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="6/10/2013"
+          android:textColor="#121212"
+          android:textStyle="bold"
+          android:layout_alignParentRight="true"/>
+      </RelativeLayout>
+</LinearLayout>

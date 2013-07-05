@@ -49,6 +49,7 @@ class ContactsContent(context: Context){
   def setContactsListAdapter() = {
     val contactsManager = new ContactsManager(ctx)
     val adapter = new ContactsListAdapter(ctx, contactsManager)
+    contact_list.setAdapter(adapter)
   }
   
   /**
@@ -59,7 +60,6 @@ class ContactsContent(context: Context){
     var img: ImageView = _
     var info: TextView = _
   }
-
   /**
    *@DESC contactsListAdapter
    */
@@ -85,8 +85,8 @@ class ContactsContent(context: Context){
       } else {
         holder = view.getTag().asInstanceOf[ContactViewHolder] 
       }
-      // holder.title.setText(data(position)("title"))
-      // holder.info.setText(data(position)("info"))
+      holder.title.setText(contactsManager.mContactsName.get(position))
+      holder.info.setText(contactsManager.mContactsNumber.get(position))
       view
     } 
   }

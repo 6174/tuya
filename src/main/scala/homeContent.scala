@@ -100,6 +100,15 @@ class HomeContent(val context:Context){
 	      holder.title = view.findViewById(R.id.title).asInstanceOf[TextView]
 	      holder.info = view.findViewById(R.id.info).asInstanceOf[TextView]
 	      view.setTag(holder)
+	      holder.title.setOnClickListener(new View.OnClickListener() {
+		        def onClick(view: View)  {
+		          Log.i("chxjia", "nav to pictalk activity")
+		          val intent = new Intent()
+			        intent.putExtra("extra", "extra data")
+			        intent.setClass(context, classOf[picTalkActivity])
+			        context.startActivity(intent)
+		        }
+		    })
 	    } else {
 	      holder = view.getTag().asInstanceOf[ViewHolder] 
 	    }

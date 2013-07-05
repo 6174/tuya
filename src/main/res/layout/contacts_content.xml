@@ -13,8 +13,12 @@
     android:id="@+id/home_top_layout"
     android:layout_width="fill_parent"
     android:layout_height="50dp"
-    android:background="@drawable/nav_top_bar"
+    android:background="#fefefe"
     android:layout_alignParentTop="true">
+    <SearchView
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"/>
+<!-- 
     <TextView 
       android:id="@+id/textviewasd"
       android:layout_width="fill_parent"
@@ -22,7 +26,7 @@
       android:gravity="center"
       android:text="contacts"
       android:textColor="#ffffff"
-      android:textStyle="bold"/>
+      android:textStyle="bold"/> -->
   </LinearLayout>
 
   <!-- content -->
@@ -33,12 +37,12 @@
     android:layout_below="@+id/home_top_layout"
     android:orientation="vertical">
 
-    <!-- search  area -->
+    <!-- search  area --><!-- 
     <RelativeLayout
       android:id="@+id/contacts_search_layout"
       android:layout_width="fill_parent"
       android:layout_height="50dp">
-    </RelativeLayout>
+    </RelativeLayout> -->
 
     <!-- contacts list -->
     <ListView

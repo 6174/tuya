@@ -12,6 +12,15 @@
             </intent-filter>
         </activity>
         
+        <activity android:name=".loginActivity">
+        </activity>
+        <activity android:name=".indexActivity">
+        </activity>
+
+        <activity android:name=".hello">
+        </activity>
+        <activity android:name=".picTalkActivity">
+        </activity>
     </application>
     <uses-sdk android:minSdkVersion="10"></uses-sdk>
 </manifest>

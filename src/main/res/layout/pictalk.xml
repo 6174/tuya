@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:orientation="vertical">
+  <!-- android:background="#fefefe" -->
+  <!--body wrapper-->
+  <RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <!--header -->
+    <RelativeLayout
+      android:id="@+id/pictalk_top_bar_layout"
+      android:layout_width="fill_parent"
+      android:layout_height="50dp"
+      android:background="@drawable/nav_top_bar"
+      android:layout_alignParentTop="true">
+      <TextView 
+        android:id="@+id/textviewasd"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:text="tuya"
+        android:textColor="#ffffff"
+        android:textStyle="bold"/>
+    </RelativeLayout>
+
+
+    <!--body-->
+    <LinearLayout
+      android:id="@+id/pictalk_body_layout"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:background="#e6e3dc"
+      android:layout_below="@+id/pictalk_top_bar_layout"
+      android:orientation="vertical">
+
+      <ListView
+        android:id="@+id/pictalk_list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="gone"
+        android:fadingEdge="none"
+        android:cacheColorHint="#00000000"/>
+      <include layout="@layout/pic_card"/>
+      <include layout="@layout/pic_card"/>
+    </LinearLayout>
+
+    <!--bottom-bar-->
+    <LinearLayout
+      android:id="@+id/pictalk_bottom_layout"
+      android:layout_width="fill_parent"
+      android:layout_alignParentBottom="true"
+      android:gravity="center"
+      android:padding="2dp"
+      android:layout_height="50dp">
+      <TextView
+        android:id="@+id/pictalk_bottom_reply_btn"
+        android:background="@drawable/default_green_btn"
+        android:layout_width="100dp"
+        android:layout_height="fill_parent"
+        android:padding="2dp"
+        android:text="Reply"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:textSize="16dp"/>
+            <!-- android:layout_centerParent="true" -->
+    </LinearLayout>
+  </RelativeLayout>
+</LinearLayout>
