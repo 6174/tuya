@@ -12,24 +12,21 @@ import java.io.FileNotFoundException
 
 
 import com.cxj.util._
-// import android.view.View;
-// import android.widget.AdapterView.OnItemSelectedListener;
-// import android.widget.ArrayAdapter;
-// import android.widget.Spinner;
-// import android.widget.Toast;
 class hello extends Activity with TypedActivity {
 
   val RESULT_LOAD_IMAGE = 1
   val TAG = "chxjia"
   val RESULT_OK = 1
-  lazy val body_layout = findView(TR.pic_body_layout)
+  lazy val pic_body_layout = findView(TR.pic_body_layout)
   lazy val openImageGallaryBtn = findView(TR.openImageGallaryBtn)
   lazy val sendBtn = findView(TR.sendBtn)
+  lazy val pic_content:picContent = new picContent(this, pic_body_layout) 
   /**
    *@method onCreate
    */
   override def onCreate(bundle: Bundle) {
     super.onCreate(bundle)
+    requestWindowFeature(Window.FEATURE_NO_TITLE)
     setContentView(R.layout.main)
     findView(TR.textview).setText("hello, world!")
     init()
@@ -43,18 +40,18 @@ class hello extends Activity with TypedActivity {
     setOpenImageGallaryEvent()
     setSendEvent()
   }
-
-  def test_add_btn_dynamic() = {
-  	val btn = new Button(this)
-  	btn.setText("dynamic add btn")
-    btn.setText(px2dip(this, 40.5).toString)
-    btn.setX(100)
-    btn.setY(100)
-  	body_layout.addView(btn)
-  }
-
-  def addParams(view: View, paramsMap: Map[String, String]) = {
-    val lparams = view.getLayoutParams()
+  
+  /**
+   *@DESC set send event
+   */
+  def setSendEvent() = {
+    val btn = sendBtn
+    btn.setOnClickListener(new View.OnClickListener(){
+      def onClick(view: View) {
+        Log.i("chxjia", "click sendBtb")
+        PopWindow.show(hello.this, R.layout.confirm_dialog, pic_body_layout)
+      }
+    })
   }
 
   /**
@@ -73,20 +70,10 @@ class hello extends Activity with TypedActivity {
     })
   }
 
-  def setSendEvent() = {
-    val btn = sendBtn
-    btn.setOnClickListener(new View.OnClickListener(){
-      def onClick(view: View) {
-        Log.i("chxjia", "click sendBtb")
-        PopWindow.show(hello.this, R.layout.confirm_dialog, body_layout)
-      }
-    })
-  }
 
   /**
    *@DESC: handles of action request this activity 
    *
-   *here is request
    */
   override def onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
     
@@ -98,58 +85,22 @@ class hello extends Activity with TypedActivity {
       Log.e(TAG, uri.toString())
       try {
         val bitmap = BitmapFactory.decodeStream(cr.openInputStream(uri))
-        val imageView = new ImageView(this)
-        imageView.setImageBitmap(bitmap)
-        
-        imageView.setX(10)
-        imageView.setY(10)
-        make_view_draggable(imageView)
-        body_layout.addView(imageView)
+        pic_content.initWithBitmap(bitmap)
       } catch{
         case e => Log.e(TAG, e.getMessage(), e) 
       }
     }
   }
-
-  def make_view_draggable(view: View) {
-    view.setOnTouchListener(new View.OnTouchListener() {
-      var ox = 0
-      var oy = 0
-      def onTouch(v: View, event: MotionEvent): Boolean = {
-
-        //getRawX is according to the screen left-top corner
-        //getX is according to the widget left-top corner
-        val ex = event.getRawX().toInt
-        val ey = event.getRawY().toInt 
-        Log.i("chxjia", "touch image" + event.getAction())
-        Log.i("chxjia", Array(ex, ey, v.getWidth(), v.getHeight()).mkString(", "))
-
-        //when there is no matched case , the activity will shut down
-        event.getAction() match {
-          case MotionEvent.ACTION_DOWN => action_touchstart
-          case MotionEvent.ACTION_MOVE => action_touchmove
-          case MotionEvent.ACTION_UP => action_touchend
-          case _ => true
-        }
-
-        def action_touchstart = {
-          Log.i("chxjia", "touchStart")
-          //v.getLeft() postion relative to It's parent
-          ox = ex - v.getLeft()
-          oy = ey - v.getTop()
-        }
-        def action_touchmove = {
-          Log.i("chxjia", "touchMove")
-          v.setX(ex - ox)
-          v.setY(ey - oy)
-        }
-        def action_touchend = {
-          Log.i("chxjia", "touchend")
-        }
-        
-        true
-      }
-    })
+  /**
+   *@DESC test add btn dynamicly
+   */ 
+  def test_add_btn_dynamic() = {
+  	val btn = new Button(this)
+  	btn.setText("dynamic add btn")
+    btn.setText(px2dip(this, 40.5).toString)
+    btn.setX(100)
+    btn.setY(100)
+  	pic_body_layout.addView(btn)
   }
 }
 // img.setOnTouchListener(new OnTouchListener(){               

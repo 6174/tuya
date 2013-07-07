@@ -10,6 +10,11 @@ package com.cxj;
 public final class R {
     public static final class attr {
     }
+    public static final class color {
+        public static final int opaque_red=0x7f040001;
+        public static final int pic_default_bg_color=0x7f040000;
+        public static final int translucent_red=0x7f040002;
+    }
     public static final class drawable {
         public static final int btn_add_info=0x7f020000;
         public static final int btn_add_text=0x7f020001;
@@ -35,55 +40,55 @@ public final class R {
         public static final int nav_top_bar=0x7f020015;
     }
     public static final class id {
-        public static final int bottom_nav_contacts_btn=0x7f050004;
-        public static final int bottom_nav_home_btn=0x7f050001;
-        public static final int btn_add_info=0x7f050026;
-        public static final int btn_add_text=0x7f050024;
-        public static final int btn_add_voice=0x7f050023;
-        public static final int btn_open_camera=0x7f050025;
-        public static final int contacts_contact_list=0x7f05000a;
-        public static final int contacts_content_layout=0x7f050007;
-        public static final int home__content_layout=0x7f050011;
-        public static final int home_bottom_icon_home=0x7f050002;
-        public static final int home_bottom_layout=0x7f050000;
-        public static final int home_bottom_text_home=0x7f050003;
-        public static final int home_content_layout=0x7f050009;
-        public static final int home_dynamic_state_list=0x7f050012;
-        public static final int home_top_layout=0x7f050008;
-        public static final int img=0x7f05000d;
-        public static final int img_holder_layout=0x7f05000c;
-        public static final int index_body_layout=0x7f050013;
-        public static final int index_login_btn=0x7f050014;
-        public static final int index_regist_btn=0x7f050015;
-        public static final int info=0x7f050010;
-        public static final int info_holder_layout=0x7f05000e;
-        public static final int layout_top=0x7f050005;
-        public static final int left_holder1=0x7f050018;
-        public static final int list_layout=0x7f05000b;
-        public static final int login_forget_password_btn=0x7f05001c;
-        public static final int login_form_layout=0x7f050017;
-        public static final int login_login_btn=0x7f05001d;
-        public static final int login_logo=0x7f050016;
-        public static final int login_name_filed=0x7f05001a;
-        public static final int login_password_filed=0x7f05001b;
-        public static final int login_signup_btn=0x7f05001e;
-        public static final int openImageGallaryBtn=0x7f050022;
-        public static final int pic_body_layout=0x7f050020;
-        public static final int pic_card_info=0x7f05002a;
-        public static final int pic_card_info_time=0x7f05002b;
-        public static final int pic_card_title_layout=0x7f050027;
-        public static final int pic_user_img=0x7f050028;
-        public static final int pic_user_name=0x7f050029;
-        public static final int pictalk_body_layout=0x7f05002d;
-        public static final int pictalk_bottom_layout=0x7f05002f;
-        public static final int pictalk_bottom_reply_btn=0x7f050030;
-        public static final int pictalk_list=0x7f05002e;
-        public static final int pictalk_top_bar_layout=0x7f05002c;
-        public static final int right_holder=0x7f050019;
-        public static final int sendBtn=0x7f050021;
-        public static final int textview=0x7f05001f;
-        public static final int textviewasd=0x7f050006;
-        public static final int title=0x7f05000f;
+        public static final int bottom_nav_contacts_btn=0x7f060004;
+        public static final int bottom_nav_home_btn=0x7f060001;
+        public static final int btn_add_info=0x7f060026;
+        public static final int btn_add_text=0x7f060024;
+        public static final int btn_add_voice=0x7f060023;
+        public static final int btn_open_camera=0x7f060025;
+        public static final int contacts_contact_list=0x7f06000a;
+        public static final int contacts_content_layout=0x7f060007;
+        public static final int home__content_layout=0x7f060011;
+        public static final int home_bottom_icon_home=0x7f060002;
+        public static final int home_bottom_layout=0x7f060000;
+        public static final int home_bottom_text_home=0x7f060003;
+        public static final int home_content_layout=0x7f060009;
+        public static final int home_dynamic_state_list=0x7f060012;
+        public static final int home_top_layout=0x7f060008;
+        public static final int img=0x7f06000d;
+        public static final int img_holder_layout=0x7f06000c;
+        public static final int index_body_layout=0x7f060013;
+        public static final int index_login_btn=0x7f060014;
+        public static final int index_regist_btn=0x7f060015;
+        public static final int info=0x7f060010;
+        public static final int info_holder_layout=0x7f06000e;
+        public static final int layout_top=0x7f060005;
+        public static final int left_holder1=0x7f060018;
+        public static final int list_layout=0x7f06000b;
+        public static final int login_forget_password_btn=0x7f06001c;
+        public static final int login_form_layout=0x7f060017;
+        public static final int login_login_btn=0x7f06001d;
+        public static final int login_logo=0x7f060016;
+        public static final int login_name_filed=0x7f06001a;
+        public static final int login_password_filed=0x7f06001b;
+        public static final int login_signup_btn=0x7f06001e;
+        public static final int openImageGallaryBtn=0x7f060022;
+        public static final int pic_body_layout=0x7f060020;
+        public static final int pic_card_info=0x7f06002a;
+        public static final int pic_card_info_time=0x7f06002b;
+        public static final int pic_card_title_layout=0x7f060027;
+        public static final int pic_user_img=0x7f060028;
+        public static final int pic_user_name=0x7f060029;
+        public static final int pictalk_body_layout=0x7f06002d;
+        public static final int pictalk_bottom_layout=0x7f06002f;
+        public static final int pictalk_bottom_reply_btn=0x7f060030;
+        public static final int pictalk_list=0x7f06002e;
+        public static final int pictalk_top_bar_layout=0x7f06002c;
+        public static final int right_holder=0x7f060019;
+        public static final int sendBtn=0x7f060021;
+        public static final int textview=0x7f06001f;
+        public static final int textviewasd=0x7f060006;
+        public static final int title=0x7f06000f;
     }
     public static final class layout {
         public static final int bottom_bar=0x7f030000;
@@ -100,6 +105,6 @@ public final class R {
         public static final int pictalk=0x7f03000b;
     }
     public static final class string {
-        public static final int app_name=0x7f040000;
+        public static final int app_name=0x7f050000;
     }
 }

@@ -17,13 +17,11 @@
               android:id="@+id/layout_top"
               android:layout_width="fill_parent"
               android:layout_height="wrap_content"
-              android:background="#00ff00"
               android:layout_alignParentTop="true">
               <TextView xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/textview"
-                android:background="#00ff00"
                 android:layout_width="fill_parent"
-                android:layout_height="60dp"/>
+                android:layout_height="10dp"/>
             </LinearLayout>
 
 
