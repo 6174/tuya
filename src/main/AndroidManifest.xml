@@ -9,7 +9,7 @@
         android:label="@string/app_name"
         android:debuggable="true">
 
-        <activity android:label="@string/app_name" android:name=".hello">
+        <activity android:label="@string/app_name" android:name=".createPicActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -22,7 +22,7 @@
         </activity>
         <activity android:name=".homeActivity">
         </activity>
-        <!-- <activity android:name=".hello">
+        <!-- <activity android:name=".createPicActivity">
         </activity> -->
         <activity android:name=".picTalkActivity">
         </activity>

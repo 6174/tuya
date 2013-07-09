@@ -39,7 +39,7 @@
                 android:layout_height="fill_parent"
                 android:background="#fefefe"
                 android:gravity="center"
-                android:text="This is the body"/>
+                android:text="Please select a Picture"/>
 
             </AbsoluteLayout>
 
@@ -78,7 +78,7 @@
                   <!-- android:scrollbarAlwaysDrawHorizontalTrack="false"> -->
 
                   <TextView 
-                    android:id="@+id/openImageGallaryBtn"
+                    android:id="@+id/btn_open_gallary"
                     android:background="@drawable/btn_open_image_gallary"
                     android:layout_width="60dp"
                     android:layout_height="fill_parent"
