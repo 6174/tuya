@@ -1,20 +1,20 @@
 [0m[[0mdebug[0m] [0m[0m
 [0m[[0mdebug[0m] [0mInitial source changes: [0m
 [0m[[0mdebug[0m] [0m	removed:Set()[0m
-[0m[[0mdebug[0m] [0m	added: Set()[0m
-[0m[[0mdebug[0m] [0m	modified: Set(/home/cxj/workspace/android-workspace/hello/src/main/scala/picContent.scala)[0m
-[0m[[0mdebug[0m] [0mRemoved products: Set()[0m
+[0m[[0mdebug[0m] [0m	added: Set(/home/cxj/workspace/android-workspace/hello/src/main/scala/picTip.scala)[0m
+[0m[[0mdebug[0m] [0m	modified: Set(/home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/src_managed/main/scala/com/cxj/TR.scala, /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/src_managed/main/java/com/cxj/R.java, /home/cxj/workspace/android-workspace/hello/src/main/scala/picContent.scala)[0m
+[0m[[0mdebug[0m] [0mRemoved products: Set(/home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes/com/cxj/R$drawable.class, /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes/com/cxj/TypedViewHolder$class.class, /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes/com/cxj/TextTip$$anon$3.class, /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes/com/cxj/R$string.class, /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes/com/cxj/TypedLayout.class, /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes/com/cxj/Tip$.class, /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes/com/cxj/R$id.class, /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes/com/cxj/TypedActivityHolder.class, /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes/com/cxj/TypedResource$$anon$2.class, /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes/com/cxj/TypedLayout$.class, /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes/com/cxj/TypedResource$$anon$1.class, /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes/com/cxj/R$layout.class, /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes/com/cxj/TR$layout$.class, /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes/com/cxj/PicContent.class, /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes/com/cxj/PicContent$.class, /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes/com/cxj/TypedViewHolder.class, /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes/com/cxj/R$attr.class, /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes/com/cxj/TR.class, /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes/com/cxj/Tip.class, /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes/com/cxj/TypedResource$.class, /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes/com/cxj/TypedView.class, /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes/com/cxj/R$color.class, /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes/com/cxj/TypedActivity.class, /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes/com/cxj/TypedDialog.class, /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes/com/cxj/TypedResource.class, /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes/com/cxj/TR$.class, /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes/com/cxj/R.class, /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes/com/cxj/TextTip.class, /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes/com/cxj/PicContent$$anon$1$$anon$2.class, /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes/com/cxj/PicContent$$anon$1.class, /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes/com/cxj/TypedResource$$anon$3.class)[0m
 [0m[[0mdebug[0m] [0mModified external sources: Set()[0m
 [0m[[0mdebug[0m] [0mModified binary dependencies: Set()[0m
-[0m[[0mdebug[0m] [0mInitial directly invalidated sources: Set(/home/cxj/workspace/android-workspace/hello/src/main/scala/picContent.scala)[0m
+[0m[[0mdebug[0m] [0mInitial directly invalidated sources: Set(/home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/src_managed/main/scala/com/cxj/TR.scala, /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/src_managed/main/java/com/cxj/R.java, /home/cxj/workspace/android-workspace/hello/src/main/scala/picContent.scala, /home/cxj/workspace/android-workspace/hello/src/main/scala/picTip.scala)[0m
 [0m[[0mdebug[0m] [0m[0m
 [0m[[0mdebug[0m] [0mSources indirectly invalidated by:[0m
-[0m[[0mdebug[0m] [0m	product: Set()[0m
+[0m[[0mdebug[0m] [0m	product: Set(/home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/src_managed/main/java/com/cxj/R.java, /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/src_managed/main/scala/com/cxj/TR.scala, /home/cxj/workspace/android-workspace/hello/src/main/scala/picContent.scala)[0m
 [0m[[0mdebug[0m] [0m	binary dep: Set()[0m
 [0m[[0mdebug[0m] [0m	external source: Set()[0m
-[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set(/home/cxj/workspace/android-workspace/hello/src/main/scala/picContent.scala)[0m
-[0m[[0minfo[0m] [0mCompiling 1 Scala source to /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes...[0m
-[0m[[0mdebug[0m] [0mRunning cached compiler 9a1f98, interfacing (CompilerInterface) with Scala compiler version 2.9.2[0m
+[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set(/home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/src_managed/main/scala/com/cxj/TR.scala, /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/src_managed/main/java/com/cxj/R.java, /home/cxj/workspace/android-workspace/hello/src/main/scala/picContent.scala, /home/cxj/workspace/android-workspace/hello/src/main/scala/picTip.scala)[0m
+[0m[[0minfo[0m] [0mCompiling 3 Scala sources and 1 Java source to /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes...[0m
+[0m[[0mdebug[0m] [0mRunning cached compiler 1e03412, interfacing (CompilerInterface) with Scala compiler version 2.9.2[0m
 [0m[[0mdebug[0m] [0mCalling Scala compiler with arguments  (CompilerInterface):[0m
 [0m[[0mdebug[0m] [0m	-d[0m
 [0m[[0mdebug[0m] [0m	/home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes[0m
@@ -22,17 +22,38 @@
 [0m[[0mdebug[0m] [0m	/usr/lib/jvm/java-7-openjdk-i386/jre/lib/resources.jar:/usr/lib/jvm/java-7-openjdk-i386/jre/lib/rt.jar:/usr/lib/jvm/java-7-openjdk-i386/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-7-openjdk-i386/jre/lib/jsse.jar:/usr/lib/jvm/java-7-openjdk-i386/jre/lib/jce.jar:/usr/lib/jvm/java-7-openjdk-i386/jre/lib/charsets.jar:/usr/lib/jvm/java-7-openjdk-i386/jre/lib/netx.jar:/usr/lib/jvm/java-7-openjdk-i386/jre/lib/plugin.jar:/usr/lib/jvm/java-7-openjdk-i386/jre/lib/rhino.jar:/usr/lib/jvm/java-7-openjdk-i386/jre/lib/jfr.jar:/usr/lib/jvm/java-7-openjdk-i386/jre/classes:/home/cxj/.sbt/boot/scala-2.9.2/lib/scala-library.jar[0m
 [0m[[0mdebug[0m] [0m	-classpath[0m
 [0m[[0mdebug[0m] [0m	/home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes:/home/cxj/softwares/android/sdk/platforms/android-17/android.jar[0m
-[0m[[33mwarn[0m] [0mthere were 7 deprecation warnings; re-run with -deprecation for details[0m
+[0m[[33mwarn[0m] [0mthere were 19 deprecation warnings; re-run with -deprecation for details[0m
 [0m[[33mwarn[0m] [0mone warning found[0m
-[0m[[0mdebug[0m] [0mScala compilation took 0.74045632 s[0m
+[0m[[0mdebug[0m] [0mScala compilation took 1.27522292 s[0m
+[0m[[0mdebug[0m] [0mCalling Javac with arguments:[0m
+[0m[[0mdebug[0m] [0m	-encoding[0m
+[0m[[0mdebug[0m] [0m	UTF-8[0m
+[0m[[0mdebug[0m] [0m	-source[0m
+[0m[[0mdebug[0m] [0m	1.6[0m
+[0m[[0mdebug[0m] [0m	-target[0m
+[0m[[0mdebug[0m] [0m	1.6[0m
+[0m[[0mdebug[0m] [0m	-d[0m
+[0m[[0mdebug[0m] [0m	/home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes[0m
+[0m[[0mdebug[0m] [0m	-classpath[0m
+[0m[[0mdebug[0m] [0m	/home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes:/home/cxj/softwares/android/sdk/platforms/android-17/android.jar:/home/cxj/.sbt/boot/scala-2.9.2/lib/scala-library.jar:/home/cxj/.sbt/boot/scala-2.9.2/lib/scala-library.jar[0m
+[0m[[0mdebug[0m] [0m	/home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/src_managed/main/java/com/cxj/R.java[0m
+[0m[[0mdebug[0m] [0mAttempting to call javac directly...[0m
+[0m[[0mdebug[0m] [0mcom.sun.tools.javac.Main not found with appropriate method signature; forking javac instead[0m
+[0m[[0mdebug[0m] [0mForking javac: javac @/tmp/sbt_71c181e3/argfile[0m
+[0m[[33mwarn[0m] [0mwarning: [options] bootstrap class path not set in conjunction with -source 1.6[0m
+[0m[[33mwarn[0m] [0m1 warning[0m
+[0m[[0mdebug[0m] [0mjavac returned exit code: 0[0m
+[0m[[0mdebug[0m] [0mJava compilation took 0.505660192 s[0m
+[0m[[0mdebug[0m] [0mJava compilation and analysis took 0.53018608 s[0m
 [0m[[0mdebug[0m] [0mStep 2 changed sources and immdediate dependencies:[0m
-[0m[[0mdebug[0m] [0m	Set(/home/cxj/workspace/android-workspace/hello/src/main/scala/picContent.scala, /home/cxj/workspace/android-workspace/hello/src/main/scala/createPicActivity.scala)[0m
+[0m[[0mdebug[0m] [0m	Set(/home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/src_managed/main/scala/com/cxj/TR.scala, /home/cxj/workspace/android-workspace/hello/src/main/scala/indexActivity.scala, /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/src_managed/main/java/com/cxj/R.java, /home/cxj/workspace/android-workspace/hello/src/main/scala/loginActivity.scala, /home/cxj/workspace/android-workspace/hello/src/main/scala/pictalkActivity.scala, /home/cxj/workspace/android-workspace/hello/src/main/scala/createPicActivity.scala, /home/cxj/workspace/android-workspace/hello/src/main/scala/homeContent.scala, /home/cxj/workspace/android-workspace/hello/src/main/scala/picContent.scala, /home/cxj/workspace/android-workspace/hello/src/main/scala/contactsManager.scala, /home/cxj/workspace/android-workspace/hello/src/main/scala/contactsContent.scala, /home/cxj/workspace/android-workspace/hello/src/main/scala/picTip.scala, /home/cxj/workspace/android-workspace/hello/src/main/scala/homeActivity.scala)[0m
 [0m[[0mdebug[0m] [0mNon-trivial strongly connected components: [0m
-[0m[[0mdebug[0m] [0m	[0m
+[0m[[0mdebug[0m] [0m	Set(/home/cxj/workspace/android-workspace/hello/src/main/scala/contactsContent.scala, /home/cxj/workspace/android-workspace/hello/src/main/scala/homeActivity.scala, /home/cxj/workspace/android-workspace/hello/src/main/scala/homeContent.scala)[0m
 [0m[[0mdebug[0m] [0mStep 2 invalidated sources:[0m
-[0m[[0mdebug[0m] [0m	Set(/home/cxj/workspace/android-workspace/hello/src/main/scala/createPicActivity.scala, /home/cxj/workspace/android-workspace/hello/src/main/scala/picContent.scala)[0m
-[0m[[0minfo[0m] [0mCompiling 2 Scala sources to /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes...[0m
-[0m[[0mdebug[0m] [0mRunning cached compiler 16835d1, interfacing (CompilerInterface) with Scala compiler version 2.9.2[0m
+[0m[[0mdebug[0m] [0m	Set(/home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/src_managed/main/scala/com/cxj/TR.scala, /home/cxj/workspace/android-workspace/hello/src/main/scala/indexActivity.scala, /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/src_managed/main/java/com/cxj/R.java, /home/cxj/workspace/android-workspace/hello/src/main/scala/loginActivity.scala, /home/cxj/workspace/android-workspace/hello/src/main/scala/pictalkActivity.scala, /home/cxj/workspace/android-workspace/hello/src/main/scala/createPicActivity.scala, /home/cxj/workspace/android-workspace/hello/src/main/scala/homeContent.scala, /home/cxj/workspace/android-workspace/hello/src/main/scala/picContent.scala, /home/cxj/workspace/android-workspace/hello/src/main/scala/contactsManager.scala, /home/cxj/workspace/android-workspace/hello/src/main/scala/contactsContent.scala, /home/cxj/workspace/android-workspace/hello/src/main/scala/picTip.scala, /home/cxj/workspace/android-workspace/hello/src/main/scala/homeActivity.scala)[0m
+[0m[[0mdebug[0m] [0mRecompiling all 15 sources: invalidated sources (12) exceeded 50.0% of all sources[0m
+[0m[[0minfo[0m] [0mCompiling 14 Scala sources and 1 Java source to /home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes...[0m
+[0m[[0mdebug[0m] [0mRunning cached compiler 590e67, interfacing (CompilerInterface) with Scala compiler version 2.9.2[0m
 [0m[[0mdebug[0m] [0mCalling Scala compiler with arguments  (CompilerInterface):[0m
 [0m[[0mdebug[0m] [0m	-d[0m
 [0m[[0mdebug[0m] [0m	/home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes[0m
@@ -40,9 +61,29 @@
 [0m[[0mdebug[0m] [0m	/usr/lib/jvm/java-7-openjdk-i386/jre/lib/resources.jar:/usr/lib/jvm/java-7-openjdk-i386/jre/lib/rt.jar:/usr/lib/jvm/java-7-openjdk-i386/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-7-openjdk-i386/jre/lib/jsse.jar:/usr/lib/jvm/java-7-openjdk-i386/jre/lib/jce.jar:/usr/lib/jvm/java-7-openjdk-i386/jre/lib/charsets.jar:/usr/lib/jvm/java-7-openjdk-i386/jre/lib/netx.jar:/usr/lib/jvm/java-7-openjdk-i386/jre/lib/plugin.jar:/usr/lib/jvm/java-7-openjdk-i386/jre/lib/rhino.jar:/usr/lib/jvm/java-7-openjdk-i386/jre/lib/jfr.jar:/usr/lib/jvm/java-7-openjdk-i386/jre/classes:/home/cxj/.sbt/boot/scala-2.9.2/lib/scala-library.jar[0m
 [0m[[0mdebug[0m] [0m	-classpath[0m
 [0m[[0mdebug[0m] [0m	/home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes:/home/cxj/softwares/android/sdk/platforms/android-17/android.jar[0m
-[0m[[33mwarn[0m] [0mthere were 9 deprecation warnings; re-run with -deprecation for details[0m
+[0m[[33mwarn[0m] [0mthere were 22 deprecation warnings; re-run with -deprecation for details[0m
 [0m[[33mwarn[0m] [0mone warning found[0m
-[0m[[0mdebug[0m] [0mScala compilation took 1.008107587 s[0m
+[0m[[0mdebug[0m] [0mScala compilation took 1.964847185 s[0m
+[0m[[0mdebug[0m] [0mCalling Javac with arguments:[0m
+[0m[[0mdebug[0m] [0m	-encoding[0m
+[0m[[0mdebug[0m] [0m	UTF-8[0m
+[0m[[0mdebug[0m] [0m	-source[0m
+[0m[[0mdebug[0m] [0m	1.6[0m
+[0m[[0mdebug[0m] [0m	-target[0m
+[0m[[0mdebug[0m] [0m	1.6[0m
+[0m[[0mdebug[0m] [0m	-d[0m
+[0m[[0mdebug[0m] [0m	/home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes[0m
+[0m[[0mdebug[0m] [0m	-classpath[0m
+[0m[[0mdebug[0m] [0m	/home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes:/home/cxj/softwares/android/sdk/platforms/android-17/android.jar:/home/cxj/.sbt/boot/scala-2.9.2/lib/scala-library.jar:/home/cxj/.sbt/boot/scala-2.9.2/lib/scala-library.jar[0m
+[0m[[0mdebug[0m] [0m	/home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/src_managed/main/java/com/cxj/R.java[0m
+[0m[[0mdebug[0m] [0mAttempting to call javac directly...[0m
+[0m[[0mdebug[0m] [0mcom.sun.tools.javac.Main not found with appropriate method signature; forking javac instead[0m
+[0m[[0mdebug[0m] [0mForking javac: javac @/tmp/sbt_5a163e6/argfile[0m
+[0m[[33mwarn[0m] [0mwarning: [options] bootstrap class path not set in conjunction with -source 1.6[0m
+[0m[[33mwarn[0m] [0m1 warning[0m
+[0m[[0mdebug[0m] [0mjavac returned exit code: 0[0m
+[0m[[0mdebug[0m] [0mJava compilation took 0.506480648 s[0m
+[0m[[0mdebug[0m] [0mJava compilation and analysis took 0.522736577 s[0m
 [0m[[0mdebug[0m] [0mStep 3 transitive dependencies:[0m
 [0m[[0mdebug[0m] [0m	Set()[0m
 [0m[[0mdebug[0m] [0mStep 3 sources from new step 2 source dependencies:[0m

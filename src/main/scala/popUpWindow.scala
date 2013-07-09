@@ -35,4 +35,20 @@ object PopWindow {
      		}
      	})
 	}
+	/**
+	 *@DESC show a popwindow with a view
+	 */
+	def show(context: Context, view: View, anchor: View) {
+		Log.i("chxjia", "show text tip")
+		var win = new PopupWindow(view, -1, -1, true)
+		win.setFocusable(true)
+		win.setOutsideTouchable(true)
+		win.showAtLocation(anchor, Gravity.CENTER, 0, 0)
+		view.setOnClickListener(new View.OnClickListener() {
+     		def onClick(view: View)  {
+     			win.dismiss()
+     			win = null
+     		}
+     	})
+	}
 } 

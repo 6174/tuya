@@ -47,6 +47,8 @@ public final class R {
         public static final int btn_add_voice=0x7f060023;
         public static final int btn_open_camera=0x7f060025;
         public static final int btn_open_gallary=0x7f060022;
+        public static final int close_tip_one=0x7f060032;
+        public static final int close_tip_two=0x7f060035;
         public static final int contacts_contact_list=0x7f06000a;
         public static final int contacts_content_layout=0x7f060007;
         public static final int home__content_layout=0x7f060011;
@@ -88,6 +90,9 @@ public final class R {
         public static final int sendBtn=0x7f060021;
         public static final int textview=0x7f06001f;
         public static final int textviewasd=0x7f060006;
+        public static final int tip_one=0x7f060031;
+        public static final int tip_two=0x7f060033;
+        public static final int tip_two_content=0x7f060034;
         public static final int title=0x7f06000f;
     }
     public static final class layout {
@@ -103,6 +108,7 @@ public final class R {
         public static final int main=0x7f030009;
         public static final int pic_card=0x7f03000a;
         public static final int pictalk=0x7f03000b;
+        public static final int text_tip=0x7f03000c;
     }
     public static final class string {
         public static final int app_name=0x7f050000;
