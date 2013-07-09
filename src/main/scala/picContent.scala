@@ -35,9 +35,9 @@ object PicContent{
  */
 class PicContent(val context: Context,val wrapper:ViewGroup) {
 	//create pic content
-    // val ACTIVITY = context.asInstanceOf[createPicActivity]
-    val picNotesArr = new ArrayList[View]()
-	val PIC = new LinearLayout(context)
+  // val ACTIVITY = context.asInstanceOf[createPicActivity]
+  val picNotesArr = new ArrayList[View]()
+	val PIC = new AbsoluteLayout(context)
 
 	PIC.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT))
 	PIC.setBackgroundColor(R.color.pic_default_bg_color)
@@ -51,6 +51,7 @@ class PicContent(val context: Context,val wrapper:ViewGroup) {
 
 	//state_code
 	var state = PicContent.STATE_CODE("idle") 
+	
 	/**
 	 *@DESC set pic image
 	 */
@@ -69,7 +70,12 @@ class PicContent(val context: Context,val wrapper:ViewGroup) {
 		// PIC.setLayoutParams(new LayoutParams(width, height))
 	}
 
+	/**
+	 *@DESC change the state of PIC 
+	 *		 handle Pick click event according to state 
+	 */
 	def setState(state_code: Int) = state = state_code 
+	
 	/**
 	 *@DESC PIC_event_delegator handle all pic events of the pic
 	 * 			include the drag drop and the click events
@@ -82,16 +88,62 @@ class PicContent(val context: Context,val wrapper:ViewGroup) {
       var pre_evy = 0
       var cur_evx = 0
       var cur_evy = 0
+    	val gestureDetector = new GestureDetector(new GestureDetector.OnGestureListener(){
+				//on_down
+				def onDown(ev:MotionEvent):Boolean = {
+					logev("mouse down", ev)
+					false
+				}
+				//onFling
+				def onFling(ev1: MotionEvent, ev2: MotionEvent, vx: Float, vy:Float):Boolean = {
+					logev("Fling")
+					false
+				}
+				//onLongPress
+				def onLongPress(ev:MotionEvent) = logev("onLongPress")
+				//onScroll
+				def onScroll(ev1:MotionEvent, ev2:MotionEvent, disX:Float, disY:Float):Boolean = {
+					logev("onscroll")
+					false
+				}
+				//onShowPress
+				def onShowPress(ev:MotionEvent) = logev("onShowPress")
+
+				//onSingleTapUp
+				def onSingleTapUp(ev:MotionEvent):Boolean = {
+					handleOnSingleTapUp(ev)
+					false
+				}
+				def logev(t:String, ev:MotionEvent) = {
+					Log.i("chxjia", t + ": " + ev.getX() + "," + ev.getY())
+				}
+				def logev(t:String) = {
+					Log.i("chxjia", t)
+				}
+			})
+			//touch event
     	def onTouch(v:View, event:MotionEvent):Boolean = {
-    		if(Gesture.detector.onTouchEvent(event)) {
+    		if(gestureDetector.onTouchEvent(event)) {
     			Log.i("chxjia", "onSingleTapUp PIC")
     			return true
     		}
     		dragView(v, event)
     	}
-    	/**
-    	 *@DESC drag view
-    	 */
+    	//handleOnSingleTapUp
+    	def handleOnSingleTapUp(event:MotionEvent) = {
+			  def add_tip(x:Int, y:Int ) = {
+			  	Log.i("chxjia", "add tip at " + x.toString + ", " + y.toString)
+			  	val btn = new Button(context)
+			  	btn.setText("TIP")
+			    btn.setX(x)
+			    btn.setY(y)
+			  	PIC.addView(btn)
+			  }
+			  val x = event.getX().toInt
+			  val y = event.getY().toInt
+			  add_tip(x, y)
+    	}
+    	//dragView
     	def dragView(v:View, event:MotionEvent):Boolean = {
     		        //getRawX is according to the screen left-top corner
 	        //getX is according to the widget left-top corner
@@ -136,6 +188,7 @@ class PicContent(val context: Context,val wrapper:ViewGroup) {
     	}
 		})
 	}
+
 	/**
 	 *@DESC add text handler
 	 */

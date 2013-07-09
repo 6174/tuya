@@ -88,7 +88,7 @@ class createPicActivity extends Activity with TypedActivity {
         pic_content.setState(PicContent.STATE_CODE("add_voice"))
       }
     })
-    
+
   }
 
   /**
@@ -127,17 +127,6 @@ class createPicActivity extends Activity with TypedActivity {
         case e => Log.e(TAG, e.getMessage(), e) 
       }
     }
-  }
-  /**
-   *@DESC test add btn dynamicly
-   */ 
-  def test_add_btn_dynamic() = {
-  	val btn = new Button(this)
-  	btn.setText("dynamic add btn")
-    btn.setText(px2dip(this, 40.5).toString)
-    btn.setX(100)
-    btn.setY(100)
-  	pic_body_layout.addView(btn)
   }
 }
   // v.layout(mx - img.getWidth()/2,
