@@ -47,7 +47,7 @@ object TR {
   val pic_body_layout = TypedResource[android.widget.AbsoluteLayout](R.id.pic_body_layout)
   val pic_card_info = TypedResource[android.widget.TextView](R.id.pic_card_info)
   val login_logo = TypedResource[android.widget.ImageView](R.id.login_logo)
-  val tip_one = TypedResource[android.widget.AbsoluteLayout](R.id.tip_one)
+  val tip_one = TypedResource[android.widget.RelativeLayout](R.id.tip_one)
   val login_name_filed = TypedResource[android.widget.EditText](R.id.login_name_filed)
   val index_regist_btn = TypedResource[android.widget.TextView](R.id.index_regist_btn)
   val textview = TypedResource[android.widget.TextView](R.id.textview)

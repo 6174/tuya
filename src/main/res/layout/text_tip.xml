@@ -3,44 +3,49 @@
    android:layout_width="wrap_content"
    android:layout_height="wrap_content">
    <!-- tip-state-one -->
-   <AbsoluteLayout
-   	android:id="@+id/tip_one"
-   	android:layout_width="30dp"
-   	android:layout_height="30dp"
-   	android:visibility="visible"
-   	android:background="#fef000">
-   	<TextView
-   		android:id="@+id/close_tip_one"
-   		android:layout_width="5dp"
-   		android:layout_height="5dp"
-   		android:layout_x="25dp"
-   		android:layout_y="0dp"
-   		android:text="X"
-   		android:visibility="gone"
-   		android:background="#ff0000"/>
-   </AbsoluteLayout>
+   <RelativeLayout
+      android:id="@+id/tip_one"
+      android:visibility="visible"
+      android:layout_width="30dp"
+      android:layout_height="30dp"
+      android:background="#fef000">
+      <TextView
+         android:layout_width="5dp"
+         android:id="@+id/close_tip_one"
+         android:layout_height="5dp"
+         android:text="X"
+         android:layout_alignParentTop="true"
+         android:layout_alignParentRight="true"
+         android:visibility="gone"
+         android:background="#ff0000"/>
+   </RelativeLayout>
    <!-- tip-state-two -->
    <RelativeLayout
    		android:id="@+id/tip_two"
-   		android:layout_height="wrap_content"
-   		android:layout_width="wrap_content"
-   		android:visibility="gone"
-   		android:padding="10dp">
-   		<TextView 
-   			android:id="@+id/tip_two_content"
-   			android:layout_width="150dp"
-   			android:layout_height="60dp"
-   			android:background="#2efefe"
-   			android:text="this is text tip texts"/>
-   		<TextView
-	   		android:id="@+id/close_tip_two"
-	   		android:layout_width="5dp"
-	   		android:layout_height="5dp"
-	   		android:text="X"
-	   		android:visibility="gone"
-	   		android:layout_alignParentTop="true"
-	   		android:layout_alignParentRight="true"
-	   		android:background="#ff2300"/>
+   		android:layout_height="fill_parent"
+   		android:layout_width="fill_parent"
+         android:visibility="gone">
+         <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:padding="5dp">
+            <TextView 
+               android:id="@+id/tip_two_content"
+               android:layout_width="fill_parent"
+               android:background="#4345e3"
+               android:padding="5dp"
+               android:layout_height="fill_parent"
+               android:text="this is text tip texts"/>
+         </RelativeLayout>
+         <TextView
+            android:id="@+id/close_tip_two"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:text="X"
+            android:gravity="center"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:background="#ff2300"/>
 	</RelativeLayout>
 </LinearLayout>
 
