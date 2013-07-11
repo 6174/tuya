@@ -75,6 +75,7 @@ public final class R {
         public static final int login_name_filed=0x7f06001a;
         public static final int login_password_filed=0x7f06001b;
         public static final int login_signup_btn=0x7f06001e;
+        public static final int ok_button=0x7f060037;
         public static final int pic_body_layout=0x7f060020;
         public static final int pic_card_info=0x7f06002a;
         public static final int pic_card_info_time=0x7f06002b;
@@ -91,6 +92,7 @@ public final class R {
         public static final int textview=0x7f06001f;
         public static final int textviewasd=0x7f060006;
         public static final int tip_one=0x7f060031;
+        public static final int tip_textarea=0x7f060036;
         public static final int tip_two=0x7f060033;
         public static final int tip_two_content=0x7f060034;
         public static final int title=0x7f06000f;
@@ -109,6 +111,7 @@ public final class R {
         public static final int pic_card=0x7f03000a;
         public static final int pictalk=0x7f03000b;
         public static final int text_tip=0x7f03000c;
+        public static final int text_tip_popupwindow=0x7f03000d;
     }
     public static final class string {
         public static final int app_name=0x7f050000;

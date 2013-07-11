@@ -91,7 +91,8 @@ class TextTip(context: Context, x:Int, y:Int ) extends Tip(context, x, y){
 	}
 	//show popUpWindow
 	def state_three() = {
-
+		val tip_three = LayoutInflater.from(context).inflate(R.layout.text_tip_popupwindow, null) 
+		PopWindow.show(context, tip_three, view)
 	}
 
 	//gesturedetector
@@ -101,7 +102,8 @@ class TextTip(context: Context, x:Int, y:Int ) extends Tip(context, x, y){
    			state match {
    				case Tip.STATE_TIP_ONE => state_two()
    				//state_two_show pop_up_window
-   				case Tip.STATE_TIP_TWO => true
+   				case Tip.STATE_TIP_TWO => state_three()
+   				//state_remoable
    				case Tip.STATE_REMOVABLE => true
    				case _ => 
    			}
