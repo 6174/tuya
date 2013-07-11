@@ -34,7 +34,23 @@ class picTalkActivity extends Activity with TypedActivity {
   }
 
   def init() = {
+    initReplyEvent()
+  }
 
+  /**
+   *@DESC reply btn clicked handler
+   */
+  def initReplyEvent() = {
+    val btn = reply_btn
+    btn.setOnClickListener(new View.OnClickListener(){
+      def onClick(view: View) {
+        Log.i("chxjia", "sign in")
+        val intent = new Intent()
+        intent.putExtra("extra", "extra data")
+        intent.setClass(picTalkActivity.this, classOf[createPicActivity])
+        startActivity(intent)
+      }
+    })
   }
 
   /**

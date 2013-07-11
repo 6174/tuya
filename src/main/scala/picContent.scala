@@ -218,6 +218,5 @@ class PicContent(val context: Context,val wrapper:ViewGroup) {
 	}
 }
 
-// class VoiceTip extends Tip{}
 
  
