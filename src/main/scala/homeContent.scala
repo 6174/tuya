@@ -63,7 +63,7 @@ class HomeContent(val context:Context){
 	  val size = 20
 	  val data = new Array[Map[String, String]](size)
 	  for(i <- 0 until size) {
-	    data(i) = Map("title" -> "hha", "info" -> "today is a nice day")
+	    data(i) = Map("title" -> "hha", "info" -> ("today is a nice day" + i.toString))
 	  }
 	  val adapter = new TuyaDynamicListAdapter(ctx, data)
 	  dynamic_list.setAdapter(adapter)
@@ -86,34 +86,57 @@ class HomeContent(val context:Context){
 	  val data:Array[Map[String, String]] ) extends BaseAdapter {
 	  private  val inflater = LayoutInflater.from(context)
 	  private  val layout = R.layout.home_dynamic_state_list_item
+  	Log.i("chxjia", "size: " + data.size.toString)
 
-	  override def getCount():Int = data.size
+	  override def getCount():Int = data.size 
 	  override def getItem(arg0: Int):Object = null
 	  override def getItemId(arg0: Int):Long = 0
+
+	  override def getViewTypeCount():Int = 2
+
+	  override def getItemViewType(position:Int):Int = {
+	  	var t = super.getItemViewType(position)
+	  	try {
+	  		t = if(position == 0) -1 else 1
+	  	} catch {
+	  		case e => Log.i("chxjia", e.toString)
+	  		case _ => 0
+	  	}
+	  	t
+	  }
 
 	  override def getView(position: Int, convertView: View, parent: ViewGroup ):View = {
 	    var holder:ViewHolder = null
 	    var view = convertView
 	    if(view == null) {
-	      holder = new ViewHolder()
-	      view = inflater.inflate(this.layout, null)
-	      holder.title = view.findViewById(R.id.title).asInstanceOf[TextView]
-	      holder.info = view.findViewById(R.id.info).asInstanceOf[TextView]
-	      view.setTag(holder)
-	      holder.title.setOnClickListener(new View.OnClickListener() {
-		        def onClick(view: View)  {
-		          Log.i("chxjia", "nav to pictalk activity")
-		          val intent = new Intent()
-			        intent.putExtra("extra", "extra data")
-			        intent.setClass(context, classOf[picTalkActivity])
-			        context.startActivity(intent)
-		        }
-		    })
+	    		Log.i("chxjia", "At nullview:" + position.toString)
+		      if(position == 0){
+		      	view = inflater.inflate(R.layout.search_box, null)
+		      	// view.getLayoutParams().height = dip2px(context, 60)
+		      } else {
+			      holder = new ViewHolder()
+			      view = inflater.inflate(this.layout, null)
+			      view.setTag(holder)
+			      holder.title = view.findViewById(R.id.title).asInstanceOf[TextView]
+			      holder.info = view.findViewById(R.id.info).asInstanceOf[TextView]
+			      holder.title.setOnClickListener(new View.OnClickListener() {
+				        def onClick(view: View)  {
+				          Log.i("chxjia", "nav to pictalk activity")
+				          val intent = new Intent()
+					        intent.putExtra("extra", "extra data")
+					        intent.setClass(context, classOf[picTalkActivity])
+					        context.startActivity(intent)
+				        }
+				    })
+		      }
 	    } else {
-	      holder = view.getTag().asInstanceOf[ViewHolder] 
+	    	if(position > 0) holder = view.getTag().asInstanceOf[ViewHolder]
 	    }
-	    holder.title.setText(data(position)("title"))
-	    holder.info.setText(data(position)("info"))
+	    if(position > 0){
+    		Log.i("chxjia", "At:" + position.toString)
+		    holder.title.setText(data(position-1)("title"))
+		    holder.info.setText(data(position-1)("info"))
+	    }
 	    view
 	  } 
 	}

@@ -45,6 +45,8 @@ public final class R {
         public static final int login_logo=0x7f02001a;
         public static final int nav_bottom_bar=0x7f02001b;
         public static final int nav_top_bar=0x7f02001c;
+        public static final int search_box_inner=0x7f02001d;
+        public static final int search_icon=0x7f02001e;
     }
     public static final class id {
         public static final int bottom_nav_contacts_btn=0x7f060004;
@@ -54,8 +56,8 @@ public final class R {
         public static final int btn_add_voice=0x7f060024;
         public static final int btn_open_camera=0x7f060026;
         public static final int btn_open_gallary=0x7f060023;
-        public static final int close_tip_one=0x7f060033;
-        public static final int close_tip_two=0x7f060036;
+        public static final int close_tip_one=0x7f060035;
+        public static final int close_tip_two=0x7f060038;
         public static final int contacts_contact_list=0x7f06000a;
         public static final int contacts_content_layout=0x7f060007;
         public static final int home__content_layout=0x7f060011;
@@ -83,7 +85,7 @@ public final class R {
         public static final int login_name_filed=0x7f06001b;
         public static final int login_password_filed=0x7f06001c;
         public static final int login_signup_btn=0x7f06001f;
-        public static final int ok_button=0x7f060038;
+        public static final int ok_button=0x7f06003a;
         public static final int pic_body_layout=0x7f060021;
         public static final int pic_card_info=0x7f06002b;
         public static final int pic_card_info_time=0x7f06002c;
@@ -96,13 +98,15 @@ public final class R {
         public static final int pictalk_list=0x7f06002f;
         public static final int pictalk_top_bar_layout=0x7f06002d;
         public static final int right_holder=0x7f06001a;
+        public static final int search_box_search_btn=0x7f060032;
+        public static final int search_box_text_fild=0x7f060033;
         public static final int sendBtn=0x7f060022;
         public static final int textview=0x7f060020;
         public static final int textviewasd=0x7f060006;
-        public static final int tip_one=0x7f060032;
-        public static final int tip_textarea=0x7f060037;
-        public static final int tip_two=0x7f060034;
-        public static final int tip_two_content=0x7f060035;
+        public static final int tip_one=0x7f060034;
+        public static final int tip_textarea=0x7f060039;
+        public static final int tip_two=0x7f060036;
+        public static final int tip_two_content=0x7f060037;
         public static final int title=0x7f06000f;
     }
     public static final class layout {
@@ -121,8 +125,9 @@ public final class R {
         public static final int main=0x7f03000c;
         public static final int pic_card=0x7f03000d;
         public static final int pictalk=0x7f03000e;
-        public static final int text_tip=0x7f03000f;
-        public static final int text_tip_popupwindow=0x7f030010;
+        public static final int search_box=0x7f03000f;
+        public static final int text_tip=0x7f030010;
+        public static final int text_tip_popupwindow=0x7f030011;
     }
     public static final class string {
         public static final int app_name=0x7f050000;

@@ -32,6 +32,8 @@
 [0m[[0mdebug[0m] [0m=> res/drawable/login_logo.png[0m
 [0m[[0mdebug[0m] [0m=> res/drawable/nav_bottom_bar.png[0m
 [0m[[0mdebug[0m] [0m=> res/drawable/nav_top_bar.png[0m
+[0m[[0mdebug[0m] [0m=> res/drawable/search_box_inner.png[0m
+[0m[[0mdebug[0m] [0m=> res/drawable/search_icon.png[0m
 [0m[[0mdebug[0m] [0m=> res/layout/bottom_bar.xml[0m
 [0m[[0mdebug[0m] [0m=> res/layout/confirm_dialog.xml[0m
 [0m[[0mdebug[0m] [0m=> res/layout/contacts_content.xml[0m
@@ -47,6 +49,7 @@
 [0m[[0mdebug[0m] [0m=> res/layout/main.xml[0m
 [0m[[0mdebug[0m] [0m=> res/layout/pic_card.xml[0m
 [0m[[0mdebug[0m] [0m=> res/layout/pictalk.xml[0m
+[0m[[0mdebug[0m] [0m=> res/layout/search_box.xml[0m
 [0m[[0mdebug[0m] [0m=> res/layout/text_tip.xml[0m
 [0m[[0mdebug[0m] [0m=> res/layout/text_tip_popupwindow.xml[0m
 [0m[[0mdebug[0m] [0m=> AndroidManifest.xml[0m

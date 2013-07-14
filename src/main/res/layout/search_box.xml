@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   android:layout_width="fill_parent"
+   android:layout_height="50dp"
+   android:padding="2dp"
+   android:background="#efefef"
+   android:orientation="vertical">
+    <RelativeLayout
+   		android:layout_width="fill_parent"    
+   		android:layout_height="50dp">
+   		<!-- search-button -->
+
+   		<!-- search-inner -->
+   		<LinearLayout
+   			android:layout_width="fill_parent"
+   			android:layout_height="fill_parent"
+   			android:layout_alignParentLeft="true"
+	   		android:background="@drawable/search_box_inner"
+   			android:layout_toLeftOf="@+id/search_box_search_btn"> <!-- search-icon -->
+   			<ImageView
+   				android:layout_width="wrap_content"
+   				android:layout_height="fill_parent"
+   				android:layout_marginRight="0dp"
+   				android:src="@drawable/search_icon"/>
+	   		<EditText
+	   			android:id="@+id/search_box_text_fild"
+	   			android:layout_width="fill_parent"
+	   			android:background="#00000000"
+	   			android:layout_height="fill_parent"
+	   			android:text="some text"/>
+   		</LinearLayout>
+
+   		<TextView
+   			android:id="@+id/search_box_search_btn"
+   			android:layout_alignParentRight="true"
+   			android:layout_width="60dp"
+   			android:layout_height="fill_parent"
+   			android:gravity="center"
+      		android:textColor="#ffffff"
+      		android:textStyle="bold"
+   			android:text="search"
+   			android:background="@drawable/default_green_btn"/>
+
+   	</RelativeLayout>
+</LinearLayout>
