@@ -20,7 +20,6 @@
 [0m[[0mdebug[0m] [0m=> res/drawable/index_bg.png[0m
 [0m[[0mdebug[0m] [0m=> res/drawable/index_btn_bg.png[0m
 [0m[[0mdebug[0m] [0m=> res/drawable/index_slide_1.png[0m
-[0m[[0mdebug[0m] [0m=> res/drawable/intro_slide1.png[0m
 [0m[[0mdebug[0m] [0m=> res/drawable/login_bg.png[0m
 [0m[[0mdebug[0m] [0m=> res/drawable/login_logo.png[0m
 [0m[[0mdebug[0m] [0m=> res/drawable/nav_bottom_bar.png[0m
@@ -33,6 +32,9 @@
 [0m[[0mdebug[0m] [0m=> res/layout/home_content.xml[0m
 [0m[[0mdebug[0m] [0m=> res/layout/home_dynamic_state_list_item.xml[0m
 [0m[[0mdebug[0m] [0m=> res/layout/index.xml[0m
+[0m[[0mdebug[0m] [0m=> res/layout/index_viewpager_page1.xml[0m
+[0m[[0mdebug[0m] [0m=> res/layout/index_viewpager_page2.xml[0m
+[0m[[0mdebug[0m] [0m=> res/layout/index_viewpager_page3.xml[0m
 [0m[[0mdebug[0m] [0m=> res/layout/login.xml[0m
 [0m[[0mdebug[0m] [0m=> res/layout/main.xml[0m
 [0m[[0mdebug[0m] [0m=> res/layout/pic_card.xml[0m

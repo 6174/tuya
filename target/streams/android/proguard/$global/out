@@ -1,5 +1,5 @@
 [0m[[0mdebug[0m] [0mexecuting proguard: -injars[0m
-[0m[[0mdebug[0m] [0m"/home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes":"/home/cxj/.sbt/boot/scala-2.9.2/lib/scala-library.jar"(!META-INF/MANIFEST.MF,!**/R.class,!**/R$*.class,!**/TR.class,!**/TR$.class,!**/library.properties)[0m
+[0m[[0mdebug[0m] [0m"/home/cxj/workspace/android-workspace/hello/target/scala-2.9.2/classes":"/home/cxj/workspace/android-workspace/hello/lib/android-support-v4.jar"(!META-INF/MANIFEST.MF,!**/R.class,!**/R$*.class,!**/TR.class,!**/TR$.class,!**/library.properties):"/home/cxj/.sbt/boot/scala-2.9.2/lib/scala-library.jar"(!META-INF/MANIFEST.MF,!**/R.class,!**/R$*.class,!**/TR.class,!**/TR$.class,!**/library.properties)[0m
 [0m[[0mdebug[0m] [0m-outjars[0m
 [0m[[0mdebug[0m] [0m"/home/cxj/workspace/android-workspace/hello/target/classes.min.jar"[0m
 [0m[[0mdebug[0m] [0m-libraryjars[0m

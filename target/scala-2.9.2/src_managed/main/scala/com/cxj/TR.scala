@@ -30,7 +30,7 @@ object TR {
   val tip_textarea = TypedResource[android.widget.EditText](R.id.tip_textarea)
   val close_tip_one = TypedResource[android.widget.TextView](R.id.close_tip_one)
   val home_bottom_layout = TypedResource[android.widget.LinearLayout](R.id.home_bottom_layout)
-  val layout_top = TypedResource[android.widget.AbsoluteLayout](R.id.layout_top)
+  val layout_top = TypedResource[android.widget.LinearLayout](R.id.layout_top)
   val btn_add_voice = TypedResource[android.widget.TextView](R.id.btn_add_voice)
   val login_forget_password_btn = TypedResource[android.widget.TextView](R.id.login_forget_password_btn)
   val info = TypedResource[android.widget.TextView](R.id.info)
@@ -39,6 +39,7 @@ object TR {
   val bottom_nav_contacts_btn = TypedResource[android.widget.RelativeLayout](R.id.bottom_nav_contacts_btn)
   val btn_open_camera = TypedResource[android.widget.TextView](R.id.btn_open_camera)
   val close_tip_two = TypedResource[android.widget.TextView](R.id.close_tip_two)
+  val index_viewpager = TypedResource[android.support.v4.view.ViewPager](R.id.index_viewpager)
   val bottom_nav_home_btn = TypedResource[android.widget.RelativeLayout](R.id.bottom_nav_home_btn)
   val ok_button = TypedResource[android.widget.TextView](R.id.ok_button)
   val tip_two_content = TypedResource[android.widget.TextView](R.id.tip_two_content)
@@ -63,7 +64,8 @@ object TR {
   val login_signup_btn = TypedResource[android.widget.TextView](R.id.login_signup_btn)
   val pictalk_top_bar_layout = TypedResource[android.widget.RelativeLayout](R.id.pictalk_top_bar_layout)
  object layout {
-  val bottom_bar = TypedLayout(R.layout.bottom_bar)
+  val index_viewpager_page1 = TypedLayout(R.layout.index_viewpager_page1)
+ val bottom_bar = TypedLayout(R.layout.bottom_bar)
  val main = TypedLayout(R.layout.main)
  val home_content = TypedLayout(R.layout.home_content)
  val text_tip_popupwindow = TypedLayout(R.layout.text_tip_popupwindow)
@@ -73,9 +75,11 @@ object TR {
  val pic_card = TypedLayout(R.layout.pic_card)
  val pictalk = TypedLayout(R.layout.pictalk)
  val contacts_list_item = TypedLayout(R.layout.contacts_list_item)
+ val index_viewpager_page3 = TypedLayout(R.layout.index_viewpager_page3)
  val text_tip = TypedLayout(R.layout.text_tip)
  val contacts_content = TypedLayout(R.layout.contacts_content)
  val index = TypedLayout(R.layout.index)
+ val index_viewpager_page2 = TypedLayout(R.layout.index_viewpager_page2)
  val home_dynamic_state_list_item = TypedLayout(R.layout.home_dynamic_state_list_item)
  }
 }
