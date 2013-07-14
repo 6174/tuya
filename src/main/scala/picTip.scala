@@ -11,6 +11,7 @@ import android.view._
 import android.view.ViewGroup.LayoutParams
 import android.widget._
 import android.util.Log
+import android.util.DisplayMetrics
 
 import java.io.FileNotFoundException
 import java.util.ArrayList

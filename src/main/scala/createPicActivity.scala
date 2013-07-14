@@ -36,7 +36,7 @@ class createPicActivity extends Activity with TypedActivity {
     super.onCreate(bundle)
     requestWindowFeature(Window.FEATURE_NO_TITLE)
     setContentView(R.layout.main)
-    findView(TR.textview).setText("hello, world!")
+    // findView(TR.textview).setText("hello, world!")
     init()
   }
 

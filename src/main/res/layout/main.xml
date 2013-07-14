@@ -18,10 +18,10 @@
               android:layout_width="fill_parent"
               android:layout_height="wrap_content"
               android:layout_alignParentTop="true">
-              <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+             <!--  <TextView xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/textview"
                 android:layout_width="fill_parent"
-                android:layout_height="10dp"/>
+                android:layout_height="10dp"/> -->
             </LinearLayout>
 
 

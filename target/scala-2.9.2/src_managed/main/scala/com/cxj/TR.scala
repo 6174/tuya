@@ -55,7 +55,6 @@ object TR {
   val login_name_filed = TypedResource[android.widget.EditText](R.id.login_name_filed)
   val index_regist_btn = TypedResource[android.widget.TextView](R.id.index_regist_btn)
   val search_box_search_btn = TypedResource[android.widget.TextView](R.id.search_box_search_btn)
-  val textview = TypedResource[android.widget.TextView](R.id.textview)
   val home_bottom_icon_home = TypedResource[android.widget.ImageView](R.id.home_bottom_icon_home)
   val home_bottom_text_home = TypedResource[android.widget.TextView](R.id.home_bottom_text_home)
   val title = TypedResource[android.widget.TextView](R.id.title)

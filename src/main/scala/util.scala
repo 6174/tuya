@@ -1,13 +1,16 @@
 package com.cxj
 
-import _root_.android.app.Activity
-import _root_.android.os.Bundle
-import _root_.android.content.Context
+import android.app.Activity
+import android.os.Bundle
+import android.content.Context
+import android.util.DisplayMetrics
+import android.util.Log
 
 /**
  *@desc utils for computing 
  */
 object util {
+	lazy val metrics = new DisplayMetrics()
 	//compute dip2px
 	def dip2px(ctx: Context, dip:Double): Int = {
 		val scale = ctx.getResources().getDisplayMetrics().density
@@ -17,6 +20,18 @@ object util {
 	def px2dip(ctx: Context, px:Double): Int = {
 		val scale = ctx.getResources().getDisplayMetrics().density
 		(px / scale + 0.5f).toInt
+	}
+
+	def screenWidth(ctx: Context):Int = {
+		val context = ctx.asInstanceOf[Activity]
+ 		context.getWindowManager().getDefaultDisplay().getMetrics(metrics)
+ 		metrics.widthPixels
+	}
+
+	def screenHeight(ctx: Context):Int = {
+		val context = ctx.asInstanceOf[Activity]
+ 		context.getWindowManager().getDefaultDisplay().getMetrics(metrics)
+		metrics.heightPixels		
 	}
 }
 

@@ -30,10 +30,14 @@
 [0m[[0mdebug[0m] [0m=> res/drawable/index_slide_3.png[0m
 [0m[[0mdebug[0m] [0m=> res/drawable/login_bg.png[0m
 [0m[[0mdebug[0m] [0m=> res/drawable/login_logo.png[0m
+[0m[[0mdebug[0m] [0m=> res/drawable/minus_icon.png[0m
 [0m[[0mdebug[0m] [0m=> res/drawable/nav_bottom_bar.png[0m
 [0m[[0mdebug[0m] [0m=> res/drawable/nav_top_bar.png[0m
 [0m[[0mdebug[0m] [0m=> res/drawable/search_box_inner.png[0m
 [0m[[0mdebug[0m] [0m=> res/drawable/search_icon.png[0m
+[0m[[0mdebug[0m] [0m=> res/drawable/text_tip.png[0m
+[0m[[0mdebug[0m] [0m=> res/drawable/voice_tip_off.png[0m
+[0m[[0mdebug[0m] [0m=> res/drawable/voice_tip_on.png[0m
 [0m[[0mdebug[0m] [0m=> res/layout/bottom_bar.xml[0m
 [0m[[0mdebug[0m] [0m=> res/layout/confirm_dialog.xml[0m
 [0m[[0mdebug[0m] [0m=> res/layout/contacts_content.xml[0m

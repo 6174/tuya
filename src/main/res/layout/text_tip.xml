@@ -8,16 +8,16 @@
       android:visibility="visible"
       android:layout_width="30dp"
       android:layout_height="30dp"
-      android:background="#fef000">
+      android:background="@drawable/text_tip">
       <TextView
-         android:layout_width="5dp"
          android:id="@+id/close_tip_one"
-         android:layout_height="5dp"
          android:text="X"
+         android:layout_width="5dp"
+         android:layout_height="5dp"
+         android:background="@drawable/minus_icon"
          android:layout_alignParentTop="true"
          android:layout_alignParentRight="true"
-         android:visibility="gone"
-         android:background="#ff0000"/>
+         android:visibility="gone"/>
    </RelativeLayout>
    <!-- tip-state-two -->
    <RelativeLayout

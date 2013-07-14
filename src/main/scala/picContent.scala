@@ -34,6 +34,7 @@ object PicContent{
  *@DESC PicContent is a class handling tuya pic editing methods  
  */
 class PicContent(val context: Context,val wrapper:ViewGroup) {
+
 	//create pic content
   // val ACTIVITY = context.asInstanceOf[createPicActivity]
   val picNotesArr = new ArrayList[View]()
@@ -42,8 +43,13 @@ class PicContent(val context: Context,val wrapper:ViewGroup) {
 	PIC.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT))
 	PIC.setBackgroundColor(R.color.pic_default_bg_color)
 
+	lazy val swidth = screenWidth(context)
+	lazy val sheight = screenHeight(context)
+	var picwidth = PIC.getWidth()
+	var picheight = PIC.getHeight()
 	val w_height = wrapper.getHeight()
 	val w_width = wrapper.getWidth()
+
 	//add to the pic_content wrapper
 	wrapper.addView(PIC)
 	// make_view_draggable(PIC)
@@ -63,9 +69,19 @@ class PicContent(val context: Context,val wrapper:ViewGroup) {
 		Log.i("chxjia", width.toString() + " " + height.toString())
 		val bd = new BitmapDrawable(bitmap)
 		val image = bd.asInstanceOf[Drawable]
-		PIC.getLayoutParams().height = (height*1.5).toInt
-		PIC.getLayoutParams().width = (width*1.5).toInt
+
+		picheight = (height*1.5).toInt
+		picwidth = (width*1.5).toInt
+		PIC.getLayoutParams().height = picheight 
+		PIC.getLayoutParams().width = picwidth 
 		PIC.setBackground(image)
+
+		//center picture
+		var pos_x = (swidth - picwidth)/2 
+    var pos_y = (sheight - picheight)/2
+    PIC.setX(pos_x)
+    PIC.setY(pos_y)
+    
 		//this way will shut down activity 
 		// PIC.setLayoutParams(new LayoutParams(width, height))
 	}
@@ -84,10 +100,10 @@ class PicContent(val context: Context,val wrapper:ViewGroup) {
 		PIC.setOnTouchListener(new View.OnTouchListener{
 		 	// val pre_event:MotionEvent = _
 		 	// val cur_event:MotionEvent = _
-		 	var pre_evx = 0
+	 		var pre_evx = 0
       var pre_evy = 0
-      var cur_evx = 0
-      var cur_evy = 0
+    	var cur_evx = 0
+    	var cur_evy = 0
     	val gestureDetector = new GestureDetector(new GestureDetector.OnGestureListener(){
 				//on_down
 				def onDown(ev:MotionEvent):Boolean = {
@@ -178,10 +194,29 @@ class PicContent(val context: Context,val wrapper:ViewGroup) {
 	          cur_evx = ex 
 	          cur_evy = ey
 
+	          var pos_x = deltaX + v.getX()
+	          var pos_y = deltaY + v.getY()
+
 	          //v.getLeft() postion relative to It's parent
 	          // Log.i("chxjia", v.getLeft())
-	          v.setX(deltaX + v.getX())
-	          v.setY(deltaY + v.getY())
+	          //bounding box
+	          if(pos_x >= 0) pos_x = 0
+	          if(pos_y >= 0) pos_y = 0
+
+	          if(pos_x + picwidth <= swidth) pos_x = swidth - picwidth 
+	          if(pos_y + picheight <= sheight) pos_y = sheight - picheight 
+
+	          if(picwidth <= swidth) pos_x = {
+	          	//center
+	          	(swidth - picwidth)/2
+	          }
+	          if(picheight <= sheight) pos_y = {
+	          	//center
+	          	(sheight - picheight)/2
+	          }
+
+	          v.setX(pos_x)
+	          v.setY(pos_y)
 	        }
 	        def action_touchend = {
 	          // Log.i("chxjia", "touchend")
