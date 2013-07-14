@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:debuggable="true">
 
-        <activity android:label="@string/app_name" android:name=".homeActivity">
+        <activity android:label="@string/app_name" android:name=".indexActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -21,11 +21,13 @@
         </activity>
        <!--  <activity android:name=".indexActivity">
         </activity> -->
-      <!--   <activity android:name=".homeActivity">
-        </activit -->y>
+        <activity android:name=".homeActivity">
+        </activity>
         <activity android:name=".createPicActivity">
         </activity>
         <activity android:name=".picTalkActivity">
+        </activity>
+        <activity android:name=".settingActivity">
         </activity>
     </application>
     <uses-sdk android:minSdkVersion="10"/>

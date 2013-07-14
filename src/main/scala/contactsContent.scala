@@ -43,6 +43,20 @@ class ContactsContent(context: Context){
     }
 
   }
+
+  def show() = {
+    if (!isShow){
+      content.setVisibility(View.VISIBLE)
+      isShow = true
+    }
+  }
+
+  def hide() = {
+    if(isShow){
+      content.setVisibility(View.GONE)
+      isShow = false
+    }
+  }
   /**
    *@DESC set contacts list adapter
    */

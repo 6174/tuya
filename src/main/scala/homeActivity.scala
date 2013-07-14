@@ -20,8 +20,10 @@ import java.io.FileNotFoundException
 import com.cxj.util._
 
 class homeActivity extends Activity with TypedActivity {
+
   val homeContent = new HomeContent(this)
   val contactsContent = new ContactsContent(this)
+  val settingContent = new SettingContent(this)
 
   /**
    *@method onCreate
@@ -43,6 +45,7 @@ class homeActivity extends Activity with TypedActivity {
     setNavEvents()
     homeContent.init()
     contactsContent.init()
+    settingContent.init()
   }
 
   /**
@@ -54,18 +57,29 @@ class homeActivity extends Activity with TypedActivity {
     homeContent.bottom_nav_home_btn.setOnClickListener(new View.OnClickListener() {
         def onClick(view: View)  {
           Log.i("chxjia", "nav to home")
-          homeContent.toggle()
-          contactsContent.toggle()
+          homeContent.show()
+          contactsContent.hide()
+          settingContent.hide()
         }
     })
     //nav to contacts
     homeContent.bottom_nav_contacts_btn.setOnClickListener(new View.OnClickListener() {
         def onClick(view: View)  {
           Log.i("chjxia", "nav to contacts")
-          homeContent.toggle()
-          contactsContent.toggle()
+          contactsContent.show()
+          homeContent.hide()
+          settingContent.hide()
         }
     })
+    //nav to settings
+    homeContent.bottom_nav_setting_btn.setOnClickListener(new View.OnClickListener(){
+      def onClick(view: View) {
+        Log.i("chxjia", "nav to settings")
+        settingContent.show()
+        homeContent.hide()
+        contactsContent.hide()
+      }
+      })
   }
 
 }

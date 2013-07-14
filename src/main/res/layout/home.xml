@@ -13,6 +13,8 @@
             <include layout="@layout/home_content"/>
             <!-- contacts content -->
             <include layout="@layout/contacts_content"/>
+            <!-- setting content -->
+            <include layout="@layout/setting_content"/>
             <!-- bottom bar -->
             <include layout="@layout/bottom_bar"/>
       </RelativeLayout>

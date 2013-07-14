@@ -74,6 +74,7 @@
   </RelativeLayout>
   <!--nav-Setting-->
   <RelativeLayout
+    android:id="@+id/bottom_nav_setting_btn"
     android:layout_height="fill_parent"
     android:layout_width="0dp"
     android:gravity="center"

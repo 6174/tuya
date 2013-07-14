@@ -25,6 +25,7 @@ class HomeContent(val context:Context){
   lazy val content = ctx.findView(TR.home__content_layout)
   lazy val bottom_nav_home_btn = ctx.findView(TR.bottom_nav_home_btn)
   lazy val bottom_nav_contacts_btn = ctx.findView(TR.bottom_nav_contacts_btn)
+  lazy val bottom_nav_setting_btn = ctx.findView(TR.bottom_nav_setting_btn)
 
   /**
    *@DESC init method
@@ -44,8 +45,22 @@ class HomeContent(val context:Context){
       content.setVisibility(View.VISIBLE)
       isShow = true
     }
-
   }
+
+
+ 	def show() = {
+ 		if (!isShow){
+ 			content.setVisibility(View.VISIBLE)
+ 			isShow = true
+ 		}
+ 	}
+
+ 	def hide() = {
+ 		if(isShow){
+ 			content.setVisibility(View.GONE)
+ 			isShow = false
+ 	  }
+ 	}
 
   def testArrayAdapter() = {
 	  Log.i("chxjia", "testArrayAdapter")

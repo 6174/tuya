@@ -9,108 +9,172 @@ package com.cxj;
 
 public final class R {
     public static final class attr {
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int image=0x7f010002;
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int subtitle=0x7f010001;
+        /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int title=0x7f010000;
     }
     public static final class color {
+        public static final int base_end_color_default=0x7f040005;
+        public static final int base_end_color_pressed=0x7f040007;
+        /**  ITEM BACKGROUND COLOR - STATE - DEFAULT 
+         */
+        public static final int base_start_color_default=0x7f040004;
+        /**  ITEM BACKGROUND COLOR - STATE - PRESSED 
+         */
+        public static final int base_start_color_pressed=0x7f040006;
         public static final int opaque_red=0x7f040001;
         public static final int pic_default_bg_color=0x7f040000;
+        /**  LIST BORDER COLOR 
+         */
+        public static final int rounded_container_border=0x7f040003;
+        /**  ITEM TEXT COLORS - STATES - PRESSED AND DEFAULT 
+         */
+        public static final int text_color_default=0x7f040008;
+        public static final int text_color_pressed=0x7f040009;
+        public static final int text_color_selector=0x7f04000a;
         public static final int translucent_red=0x7f040002;
     }
     public static final class drawable {
-        public static final int btn_add_info=0x7f020000;
-        public static final int btn_add_text=0x7f020001;
-        public static final int btn_add_voice=0x7f020002;
-        public static final int btn_bg=0x7f020003;
-        public static final int btn_open_camera=0x7f020004;
-        public static final int btn_open_image_gallary=0x7f020005;
-        public static final int contact_photo=0x7f020006;
-        public static final int default_green_btn=0x7f020007;
-        public static final int default_white_btn=0x7f020008;
-        public static final int icon_contact=0x7f020009;
-        public static final int icon_home=0x7f02000a;
-        public static final int icon_like=0x7f02000b;
-        public static final int icon_setting=0x7f02000c;
-        public static final int img_sample=0x7f02000d;
-        public static final int index_bg=0x7f02000e;
-        public static final int index_bg1_1=0x7f02000f;
-        public static final int index_bg1_2=0x7f020010;
-        public static final int index_bg1_3=0x7f020011;
-        public static final int index_bg_1=0x7f020012;
-        public static final int index_bg_2=0x7f020013;
-        public static final int index_bg_3=0x7f020014;
-        public static final int index_btn_bg=0x7f020015;
-        public static final int index_slide_1=0x7f020016;
-        public static final int index_slide_2=0x7f020017;
-        public static final int index_slide_3=0x7f020018;
-        public static final int login_bg=0x7f020019;
-        public static final int login_logo=0x7f02001a;
-        public static final int minus_icon=0x7f02001b;
-        public static final int nav_bottom_bar=0x7f02001c;
-        public static final int nav_top_bar=0x7f02001d;
-        public static final int search_box_inner=0x7f02001e;
-        public static final int search_icon=0x7f02001f;
-        public static final int text_tip=0x7f020020;
-        public static final int voice_tip_off=0x7f020021;
-        public static final int voice_tip_on=0x7f020022;
+        public static final int background_view_rounded_bottom=0x7f020000;
+        public static final int background_view_rounded_container=0x7f020001;
+        public static final int background_view_rounded_middle=0x7f020002;
+        public static final int background_view_rounded_single=0x7f020003;
+        public static final int background_view_rounded_top=0x7f020004;
+        public static final int btn_add_info=0x7f020005;
+        public static final int btn_add_text=0x7f020006;
+        public static final int btn_add_voice=0x7f020007;
+        public static final int btn_bg=0x7f020008;
+        public static final int btn_open_camera=0x7f020009;
+        public static final int btn_open_image_gallary=0x7f02000a;
+        public static final int button_text_color=0x7f02000b;
+        public static final int chevron=0x7f02000c;
+        public static final int chevron_default=0x7f02000d;
+        public static final int chevron_default_down=0x7f02000e;
+        public static final int chevron_white=0x7f02000f;
+        public static final int chevron_white_down=0x7f020010;
+        public static final int contact_photo=0x7f020011;
+        public static final int default_green_btn=0x7f020012;
+        public static final int default_white_btn=0x7f020013;
+        public static final int icon=0x7f020014;
+        public static final int icon_contact=0x7f020015;
+        public static final int icon_home=0x7f020016;
+        public static final int icon_like=0x7f020017;
+        public static final int icon_setting=0x7f020018;
+        public static final int img_sample=0x7f020019;
+        public static final int index_bg=0x7f02001a;
+        public static final int index_bg1_1=0x7f02001b;
+        public static final int index_bg1_2=0x7f02001c;
+        public static final int index_bg1_3=0x7f02001d;
+        public static final int index_bg_1=0x7f02001e;
+        public static final int index_bg_2=0x7f02001f;
+        public static final int index_bg_3=0x7f020020;
+        public static final int index_btn_bg=0x7f020021;
+        public static final int index_slide_1=0x7f020022;
+        public static final int index_slide_2=0x7f020023;
+        public static final int index_slide_3=0x7f020024;
+        public static final int login_bg=0x7f020025;
+        public static final int login_logo=0x7f020026;
+        public static final int minus_icon=0x7f020027;
+        public static final int nav_bottom_bar=0x7f020028;
+        public static final int nav_top_bar=0x7f020029;
+        public static final int search_box_inner=0x7f02002a;
+        public static final int search_icon=0x7f02002b;
+        public static final int text_tip=0x7f02002c;
+        public static final int voice_tip_off=0x7f02002d;
+        public static final int voice_tip_on=0x7f02002e;
     }
     public static final class id {
-        public static final int bottom_nav_contacts_btn=0x7f060004;
-        public static final int bottom_nav_home_btn=0x7f060001;
-        public static final int btn_add_info=0x7f060026;
-        public static final int btn_add_text=0x7f060024;
-        public static final int btn_add_voice=0x7f060023;
-        public static final int btn_open_camera=0x7f060025;
-        public static final int btn_open_gallary=0x7f060022;
-        public static final int close_tip_one=0x7f060034;
-        public static final int close_tip_two=0x7f060037;
-        public static final int contacts_contact_list=0x7f06000a;
-        public static final int contacts_content_layout=0x7f060007;
-        public static final int home__content_layout=0x7f060011;
-        public static final int home_bottom_icon_home=0x7f060002;
-        public static final int home_bottom_layout=0x7f060000;
-        public static final int home_bottom_text_home=0x7f060003;
-        public static final int home_content_layout=0x7f060009;
-        public static final int home_dynamic_state_list=0x7f060012;
-        public static final int home_top_layout=0x7f060008;
-        public static final int img=0x7f06000d;
-        public static final int img_holder_layout=0x7f06000c;
-        public static final int index_body_layout=0x7f060013;
-        public static final int index_login_btn=0x7f060015;
-        public static final int index_regist_btn=0x7f060016;
-        public static final int index_viewpager=0x7f060014;
-        public static final int info=0x7f060010;
-        public static final int info_holder_layout=0x7f06000e;
-        public static final int layout_top=0x7f060005;
-        public static final int left_holder1=0x7f060019;
-        public static final int list_layout=0x7f06000b;
-        public static final int login_forget_password_btn=0x7f06001d;
-        public static final int login_form_layout=0x7f060018;
-        public static final int login_login_btn=0x7f06001e;
-        public static final int login_logo=0x7f060017;
-        public static final int login_name_filed=0x7f06001b;
-        public static final int login_password_filed=0x7f06001c;
-        public static final int login_signup_btn=0x7f06001f;
-        public static final int ok_button=0x7f060039;
-        public static final int pic_body_layout=0x7f060020;
-        public static final int pic_card_info=0x7f06002a;
-        public static final int pic_card_info_time=0x7f06002b;
-        public static final int pic_card_title_layout=0x7f060027;
-        public static final int pic_user_img=0x7f060028;
-        public static final int pic_user_name=0x7f060029;
-        public static final int pictalk_body_layout=0x7f06002d;
-        public static final int pictalk_bottom_layout=0x7f06002f;
-        public static final int pictalk_bottom_reply_btn=0x7f060030;
-        public static final int pictalk_list=0x7f06002e;
-        public static final int pictalk_top_bar_layout=0x7f06002c;
-        public static final int right_holder=0x7f06001a;
-        public static final int search_box_search_btn=0x7f060031;
-        public static final int search_box_text_fild=0x7f060032;
-        public static final int sendBtn=0x7f060021;
-        public static final int textviewasd=0x7f060006;
-        public static final int tip_one=0x7f060033;
-        public static final int tip_textarea=0x7f060038;
-        public static final int tip_two=0x7f060035;
-        public static final int tip_two_content=0x7f060036;
-        public static final int title=0x7f06000f;
+        public static final int bottom_nav_contacts_btn=0x7f070004;
+        public static final int bottom_nav_home_btn=0x7f070001;
+        public static final int bottom_nav_setting_btn=0x7f070005;
+        public static final int btn_add_info=0x7f07002e;
+        public static final int btn_add_text=0x7f07002c;
+        public static final int btn_add_voice=0x7f07002b;
+        public static final int btn_open_camera=0x7f07002d;
+        public static final int btn_open_gallary=0x7f07002a;
+        public static final int buttonsContainer=0x7f070019;
+        public static final int chevron=0x7f07001e;
+        public static final int close_tip_one=0x7f07003f;
+        public static final int close_tip_two=0x7f070042;
+        public static final int contacts_contact_list=0x7f07000b;
+        public static final int contacts_content_layout=0x7f070008;
+        public static final int home__content_layout=0x7f070012;
+        public static final int home_bottom_icon_home=0x7f070002;
+        public static final int home_bottom_layout=0x7f070000;
+        public static final int home_bottom_text_home=0x7f070003;
+        public static final int home_content_layout=0x7f07000a;
+        public static final int home_dynamic_state_list=0x7f070013;
+        public static final int home_top_layout=0x7f070009;
+        public static final int image=0x7f07001b;
+        public static final int img=0x7f07000e;
+        public static final int img_holder_layout=0x7f07000d;
+        public static final int index_body_layout=0x7f070014;
+        public static final int index_login_btn=0x7f070016;
+        public static final int index_regist_btn=0x7f070017;
+        public static final int index_viewpager=0x7f070015;
+        public static final int info=0x7f070011;
+        public static final int info_holder_layout=0x7f07000f;
+        public static final int itemContainer=0x7f07001a;
+        public static final int itemCount=0x7f07001d;
+        public static final int layout_top=0x7f070006;
+        public static final int left_holder1=0x7f070021;
+        public static final int list_layout=0x7f07000c;
+        public static final int login_forget_password_btn=0x7f070025;
+        public static final int login_form_layout=0x7f070020;
+        public static final int login_login_btn=0x7f070026;
+        public static final int login_logo=0x7f07001f;
+        public static final int login_name_filed=0x7f070023;
+        public static final int login_password_filed=0x7f070024;
+        public static final int login_signup_btn=0x7f070027;
+        public static final int ok_button=0x7f070044;
+        public static final int pic_body_layout=0x7f070028;
+        public static final int pic_card_info=0x7f070032;
+        public static final int pic_card_info_time=0x7f070033;
+        public static final int pic_card_title_layout=0x7f07002f;
+        public static final int pic_user_img=0x7f070030;
+        public static final int pic_user_name=0x7f070031;
+        public static final int pictalk_body_layout=0x7f070035;
+        public static final int pictalk_bottom_layout=0x7f070037;
+        public static final int pictalk_bottom_reply_btn=0x7f070038;
+        public static final int pictalk_list=0x7f070036;
+        public static final int pictalk_top_bar_layout=0x7f070034;
+        public static final int right_holder=0x7f070022;
+        public static final int scrollView=0x7f07003c;
+        public static final int search_box_search_btn=0x7f070039;
+        public static final int search_box_text_fild=0x7f07003a;
+        public static final int sendBtn=0x7f070029;
+        public static final int setting_content=0x7f07003b;
+        public static final int setting_tableView=0x7f07003d;
+        public static final int subtitle=0x7f07001c;
+        public static final int tableView=0x7f070045;
+        public static final int textviewasd=0x7f070007;
+        public static final int tip_one=0x7f07003e;
+        public static final int tip_textarea=0x7f070043;
+        public static final int tip_two=0x7f070040;
+        public static final int tip_two_content=0x7f070041;
+        public static final int title=0x7f070010;
+        public static final int viewsContainer=0x7f070018;
     }
     public static final class layout {
         public static final int bottom_bar=0x7f030000;
@@ -124,15 +188,99 @@ public final class R {
         public static final int index_viewpager_page1=0x7f030008;
         public static final int index_viewpager_page2=0x7f030009;
         public static final int index_viewpager_page3=0x7f03000a;
-        public static final int login=0x7f03000b;
-        public static final int main=0x7f03000c;
-        public static final int pic_card=0x7f03000d;
-        public static final int pictalk=0x7f03000e;
-        public static final int search_box=0x7f03000f;
-        public static final int text_tip=0x7f030010;
-        public static final int text_tip_popupwindow=0x7f030011;
+        public static final int list_container=0x7f03000b;
+        public static final int list_item_bottom=0x7f03000c;
+        public static final int list_item_middle=0x7f03000d;
+        public static final int list_item_single=0x7f03000e;
+        public static final int list_item_top=0x7f03000f;
+        public static final int login=0x7f030010;
+        public static final int main=0x7f030011;
+        public static final int pic_card=0x7f030012;
+        public static final int pictalk=0x7f030013;
+        public static final int search_box=0x7f030014;
+        public static final int setting_content=0x7f030015;
+        public static final int text_tip=0x7f030016;
+        public static final int text_tip_popupwindow=0x7f030017;
+        public static final int uitableview_activity=0x7f030018;
     }
     public static final class string {
         public static final int app_name=0x7f050000;
     }
+    public static final class style {
+        /**  LIST 
+         */
+        public static final int UITableView=0x7f060000;
+        public static final int content_page_large_count_text=0x7f060009;
+        /**  TEXT 
+         */
+        public static final int content_page_large_text=0x7f060007;
+        public static final int content_page_small_text=0x7f060008;
+        public static final int list_container=0x7f060001;
+        public static final int list_item_bottom=0x7f060004;
+        public static final int list_item_chevron=0x7f060006;
+        public static final int list_item_middle=0x7f060003;
+        public static final int list_item_single=0x7f060005;
+        public static final int list_item_top=0x7f060002;
+    }
+    public static final class styleable {
+        /** Attributes that can be used with a UIButton.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #UIButton_image com.cxj:image}</code></td><td></td></tr>
+           <tr><td><code>{@link #UIButton_subtitle com.cxj:subtitle}</code></td><td></td></tr>
+           <tr><td><code>{@link #UIButton_title com.cxj:title}</code></td><td></td></tr>
+           </table>
+           @see #UIButton_image
+           @see #UIButton_subtitle
+           @see #UIButton_title
+         */
+        public static final int[] UIButton = {
+            0x7f010000, 0x7f010001, 0x7f010002
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.cxj.R.attr#image}
+          attribute's value can be found in the {@link #UIButton} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:image
+        */
+        public static final int UIButton_image = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.cxj.R.attr#subtitle}
+          attribute's value can be found in the {@link #UIButton} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:subtitle
+        */
+        public static final int UIButton_subtitle = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.cxj.R.attr#title}
+          attribute's value can be found in the {@link #UIButton} array.
+
+
+          <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:title
+        */
+        public static final int UIButton_title = 0;
+    };
 }
