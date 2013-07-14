@@ -8,8 +8,13 @@
       <LinearLayout
       	android:layout_height="fill_parent"
       	android:layout_width="fill_parent"
-      	android:background="#004433"
+      	android:background="@drawable/index_bg1_2"
       	android:layout_gravity="center">
-      	
+            <ImageView
+                  android:src="@drawable/index_slide_2"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:gravity="center"
+                  android:layout_marginTop="10dp"/>
       </LinearLayout>
 </LinearLayout>

@@ -8,7 +8,7 @@
       <LinearLayout
       	android:layout_height="fill_parent"
       	android:layout_width="fill_parent"
-      	android:background="@drawable/index_bg"
+      	android:background="@drawable/index_bg1_1"
       	android:layout_gravity="center">
       	<ImageView
       		android:src="@drawable/index_slide_1"
@@ -16,6 +16,5 @@
       		android:layout_height="wrap_content"
       		android:gravity="center"
       		android:layout_marginTop="100dp"/>
-
       </LinearLayout>
 </LinearLayout>

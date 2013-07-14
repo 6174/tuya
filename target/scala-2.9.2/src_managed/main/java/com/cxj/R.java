@@ -31,12 +31,20 @@ public final class R {
         public static final int icon_setting=0x7f02000c;
         public static final int img_sample=0x7f02000d;
         public static final int index_bg=0x7f02000e;
-        public static final int index_btn_bg=0x7f02000f;
-        public static final int index_slide_1=0x7f020010;
-        public static final int login_bg=0x7f020011;
-        public static final int login_logo=0x7f020012;
-        public static final int nav_bottom_bar=0x7f020013;
-        public static final int nav_top_bar=0x7f020014;
+        public static final int index_bg1_1=0x7f02000f;
+        public static final int index_bg1_2=0x7f020010;
+        public static final int index_bg1_3=0x7f020011;
+        public static final int index_bg_1=0x7f020012;
+        public static final int index_bg_2=0x7f020013;
+        public static final int index_bg_3=0x7f020014;
+        public static final int index_btn_bg=0x7f020015;
+        public static final int index_slide_1=0x7f020016;
+        public static final int index_slide_2=0x7f020017;
+        public static final int index_slide_3=0x7f020018;
+        public static final int login_bg=0x7f020019;
+        public static final int login_logo=0x7f02001a;
+        public static final int nav_bottom_bar=0x7f02001b;
+        public static final int nav_top_bar=0x7f02001c;
     }
     public static final class id {
         public static final int bottom_nav_contacts_btn=0x7f060004;
