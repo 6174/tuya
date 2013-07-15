@@ -55,8 +55,6 @@ class PicContent(val context: Context,val wrapper:ViewGroup) {
 
 	//add to the pic_content wrapper
 	wrapper.addView(PIC)
-	// make_view_draggable(PIC)
-	init_pic_motion_event_delegater()
 
 	//state_code
 	var state = PicContent.STATE_CODE("idle") 
@@ -109,26 +107,11 @@ class PicContent(val context: Context,val wrapper:ViewGroup) {
     	var cur_evx = 0
     	var cur_evy = 0
     	val gestureDetector = new GestureDetector(new GestureDetector.OnGestureListener(){
-				//on_down
-				def onDown(ev:MotionEvent):Boolean = {
-					logev("mouse down", ev)
-					false
-				}
-				//onFling
-				def onFling(ev1: MotionEvent, ev2: MotionEvent, vx: Float, vy:Float):Boolean = {
-					logev("Fling")
-					false
-				}
-				//onLongPress
+				def onDown(ev:MotionEvent):Boolean = false
+				def onFling(ev1: MotionEvent, ev2: MotionEvent, vx: Float, vy:Float):Boolean = false
 				def onLongPress(ev:MotionEvent) = logev("onLongPress")
-				//onScroll
-				def onScroll(ev1:MotionEvent, ev2:MotionEvent, disX:Float, disY:Float):Boolean = {
-					logev("onscroll")
-					false
-				}
-				//onShowPress
+				def onScroll(ev1:MotionEvent, ev2:MotionEvent, disX:Float, disY:Float):Boolean = false
 				def onShowPress(ev:MotionEvent) = logev("onShowPress")
-
 				//onSingleTapUp
 				def onSingleTapUp(ev:MotionEvent):Boolean = {
 					handleOnSingleTapUp(ev)
@@ -152,14 +135,19 @@ class PicContent(val context: Context,val wrapper:ViewGroup) {
     	//handleOnSingleTapUp
     	def handleOnSingleTapUp(event:MotionEvent) = {
     		if(state != PicContent.STATE_CODE("uneditable")){
-				  val x = event.getX().toInt
-				  val y = event.getY().toInt
-				  addText(x, y)
+					val x = event.getX().toInt
+				 	val y = event.getY().toInt
+				 	state match{
+				 		case  1 => addText(x, y)
+				 		case  2 => addVoice(x, y)
+				 		case  3 => false
+				 		case _ => false
+				 	}
     		}
     	}
     	//dragView
     	def dragView(v:View, event:MotionEvent):Boolean = {
-    		        //getRawX is according to the screen left-top corner
+    		//getRawX is according to the screen left-top corner
 	        //getX is according to the widget left-top corner
 	        val ex = event.getRawX().toInt
 	        val ey = event.getRawY().toInt 
@@ -232,6 +220,16 @@ class PicContent(val context: Context,val wrapper:ViewGroup) {
 		picTips += (tip.id -> tip)
 	  PIC.addView(tip.view)
 	}
+
+	/**
+	 *@DESC add voice handler
+	 */
+	def addVoice(x:Int, y:Int) {
+		Log.i("chxjia", "add voice tip" + "tip_size" + picTips.size.toString)
+		val tip = new VoiceTip(context, x, y, this)
+		picTips += (tip.id -> tip)
+		PIC.addView(tip.view)
+	}
 	
 	/**
 	 *@DESC add voice handler
@@ -259,6 +257,8 @@ class PicContent(val context: Context,val wrapper:ViewGroup) {
 	def initVoiceNoteEvents(voiceNote: View){
 
 	}
+
+	init_pic_motion_event_delegater()
 }
 
 

@@ -203,6 +203,7 @@ containing a value of this type.
         public static final int text_tip=0x7f030017;
         public static final int text_tip_popupwindow=0x7f030018;
         public static final int uitableview_activity=0x7f030019;
+        public static final int voice_tip=0x7f03001a;
     }
     public static final class string {
         public static final int app_name=0x7f050000;

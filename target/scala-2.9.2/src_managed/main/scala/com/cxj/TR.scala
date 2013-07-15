@@ -82,6 +82,7 @@ object TR {
  val setting_content = TypedLayout(R.layout.setting_content)
  val search_box = TypedLayout(R.layout.search_box)
  val main = TypedLayout(R.layout.main)
+ val voice_tip = TypedLayout(R.layout.voice_tip)
  val home_content = TypedLayout(R.layout.home_content)
  val text_tip_popupwindow = TypedLayout(R.layout.text_tip_popupwindow)
  val confirm_dialog = TypedLayout(R.layout.confirm_dialog)

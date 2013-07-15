@@ -71,20 +71,25 @@ class createPicActivity extends Activity with TypedActivity {
     addTextBtn.setOnClickListener(new View.OnClickListener(){
       def onClick(view: View) {
         Log.i("chxjia", "click add_text")
-        pic_content.setState(PicContent.STATE_CODE("add_text"))
+        try{
+          pic_content.setState(PicContent.STATE_CODE("can_add_text"))
+        }catch{
+          case e => Log.i("chxjia", e.getMessage().toString)
+        }
+
         //change style of btn
       }
     })
     addInfoBtn.setOnClickListener(new View.OnClickListener(){
       def onClick(view: View) {
         Log.i("chxjia", "click add_info")
-        pic_content.setState(PicContent.STATE_CODE("add_info"))
+        pic_content.setState(PicContent.STATE_CODE("can_add_info"))
       }
     })
     addVoiceBtn.setOnClickListener(new View.OnClickListener(){
       def onClick(view: View) {
         Log.i("chxjia", "click add_voice")
-        pic_content.setState(PicContent.STATE_CODE("add_voice"))
+        pic_content.setState(PicContent.STATE_CODE("can_add_voice"))
       }
     })
 
@@ -114,7 +119,7 @@ class createPicActivity extends Activity with TypedActivity {
   override def onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
     
     Log.i("chxjia", "imageResultCode: " + resultCode.toString)
-    if (requestCode == RESULT_LOAD_IMAGE ) {
+    if (requestCode == RESULT_LOAD_IMAGE && resultCode == -1) {
       val uri = data.getData()
       val cr = this.getContentResolver()
       Log.e(TAG, uri.toString())
