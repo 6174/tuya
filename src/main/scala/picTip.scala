@@ -115,7 +115,9 @@ class TextTip(context: Context, x:Int, y:Int ) extends Tip(context, x, y){
 			logev("longpressed")
 			if(state == Tip.STATE_TIP_ONE){
 				logev("removable")
-				state = Tip.STATE_REMOVABLE
+				// state = Tip.STATE_REMOVABLE
+				
+
 			} 
 			false
 		}

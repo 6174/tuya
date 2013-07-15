@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.content.Intent
 import android.net.Uri
 import android.graphics.BitmapFactory
+import android.graphics.Bitmap
 import android.view._
 import android.widget._
 import android.util.Log
@@ -74,14 +75,12 @@ class createPicActivity extends Activity with TypedActivity {
         //change style of btn
       }
     })
-
     addInfoBtn.setOnClickListener(new View.OnClickListener(){
       def onClick(view: View) {
         Log.i("chxjia", "click add_info")
         pic_content.setState(PicContent.STATE_CODE("add_info"))
       }
     })
-
     addVoiceBtn.setOnClickListener(new View.OnClickListener(){
       def onClick(view: View) {
         Log.i("chxjia", "click add_voice")
@@ -114,15 +113,23 @@ class createPicActivity extends Activity with TypedActivity {
    */
   override def onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
     
-    Log.i("chxjia", resultCode.toString)
-
+    Log.i("chxjia", "imageResultCode: " + resultCode.toString)
     if (requestCode == RESULT_LOAD_IMAGE ) {
       val uri = data.getData()
       val cr = this.getContentResolver()
       Log.e(TAG, uri.toString())
       try {
-        val bitmap = BitmapFactory.decodeStream(cr.openInputStream(uri))
+        //use the most efficient way to read bitmap
+        val option = new BitmapFactory.Options()
+        option.inPreferredConfig = Bitmap.Config.RGB_565
+        option.inPurgeable = true
+        option.inInputShareable = true
+        option.inSampleSize = 2
+        val bitmap = BitmapFactory.decodeStream(cr.openInputStream(uri), null, option)
+        // pic_content.bg_image.recycle()
+        pic_content.bg_image = null
         pic_content.initWithBitmap(bitmap)
+
       } catch{
         case e => Log.e(TAG, e.getMessage(), e) 
       }

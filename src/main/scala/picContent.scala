@@ -50,6 +50,8 @@ class PicContent(val context: Context,val wrapper:ViewGroup) {
 	val w_height = wrapper.getHeight()
 	val w_width = wrapper.getWidth()
 
+	var bg_image:Drawable = null
+
 	//add to the pic_content wrapper
 	wrapper.addView(PIC)
 	// make_view_draggable(PIC)
@@ -63,25 +65,24 @@ class PicContent(val context: Context,val wrapper:ViewGroup) {
 	 */
 	def initWithBitmap(bitmap:Bitmap) {
 		Log.i("chxjia", "init picContent")
-		Log.i("chxjia", state.toString())
 		val width = bitmap.getWidth()
 		val height = bitmap.getHeight()
 		Log.i("chxjia", width.toString() + " " + height.toString())
-		val bd = new BitmapDrawable(bitmap)
-		val image = bd.asInstanceOf[Drawable]
 
-		picheight = (height*1.5).toInt
-		picwidth = (width*1.5).toInt
+		val bd = new BitmapDrawable(bitmap)
+		bg_image = bd.asInstanceOf[Drawable]
+
+		picheight = (height*2.5).toInt
+		picwidth = (width*2.5).toInt
 		PIC.getLayoutParams().height = picheight 
 		PIC.getLayoutParams().width = picwidth 
-		PIC.setBackground(image)
+		PIC.setBackground(bg_image)
 
 		//center picture
 		var pos_x = (swidth - picwidth)/2 
-    var pos_y = (sheight - picheight)/2
-    PIC.setX(pos_x)
-    PIC.setY(pos_y)
-    
+	    var pos_y = (sheight - picheight)/2
+	    PIC.setX(pos_x)
+	    PIC.setY(pos_y)
 		//this way will shut down activity 
 		// PIC.setLayoutParams(new LayoutParams(width, height))
 	}

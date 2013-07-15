@@ -15,7 +15,6 @@
 		android:layout_height="fill_parent"		
 		android:background="#ffd3d3d3">
 		<br.com.dina.ui.widget.UITableView android:id="@+id/setting_tableView" style="@style/UITableView" />
-		
 	</ScrollView>
 
 </LinearLayout> 
