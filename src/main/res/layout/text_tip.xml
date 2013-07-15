@@ -6,19 +6,26 @@
    <RelativeLayout
       android:id="@+id/tip_one"
       android:visibility="visible"
-      android:layout_width="30dp"
-      android:layout_height="30dp"
-      android:background="@drawable/text_tip">
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content">
+      <RelativeLayout
+         android:layout_width="fill_parent"
+         android:layout_height="fill_parent"
+         android:padding="5dp">
+         <TextView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="10dp"
+            android:background="@drawable/text_tip"/>
+      </RelativeLayout>
       <TextView
          android:id="@+id/close_tip_one"
          android:layout_width="25dp"
          android:layout_height="25dp"
          android:background="@drawable/minus_icon"
          android:layout_alignParentTop="true"
-         android:layout_marginLeft="-10dp"
-         android:layout_marginBottom="-10dp"
          android:layout_alignParentRight="true"
-         android:visibility="visible"/>
+         android:visibility="gone"/>
    </RelativeLayout>
    <!-- tip-state-two -->
    <RelativeLayout

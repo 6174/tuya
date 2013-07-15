@@ -92,6 +92,7 @@ object TR {
  val pictalk = TypedLayout(R.layout.pictalk)
  val contacts_list_item = TypedLayout(R.layout.contacts_list_item)
  val list_item_top = TypedLayout(R.layout.list_item_top)
+ val empty_popup_window = TypedLayout(R.layout.empty_popup_window)
  val list_item_bottom = TypedLayout(R.layout.list_item_bottom)
  val index_viewpager_page3 = TypedLayout(R.layout.index_viewpager_page3)
  val list_item_middle = TypedLayout(R.layout.list_item_middle)

@@ -28,18 +28,16 @@ object Tip {
 class Tip(val context: Context, val x:Int, val y:Int, val picContent: PicContent){
 	val id = guid()
 	val view:View = null
-}
-class TextTip(context: Context, x:Int, y:Int, picContent:PicContent) extends Tip(context, x, y, picContent){
+	var state = Tip.STATE_TIP_ONE
 	//constants
-	val TIP_ONE_HEIGHT = dip2px(context, 45)
-	val TIP_ONE_WIDTH = dip2px(context, 45)
+	val TIP_ONE_HEIGHT = dip2px(context, 60)
+	val TIP_ONE_WIDTH = dip2px(context, 60)
 	val TIP_TWO_HEIGHT = dip2px(context, 55)
 	val TIP_TWO_WIDTH = dip2px(context, 200)
-
-	//variables
+}
+class TextTip(context: Context, x:Int, y:Int, picContent:PicContent) extends Tip(context, x, y, picContent){
 	var content = ""
 	var create_time = ""
-	var state = Tip.STATE_TIP_ONE
 
 	//UI elements
 	override val view = LayoutInflater.from(context).inflate(Tip.TEXT_LAYOUT, null) 
@@ -55,6 +53,7 @@ class TextTip(context: Context, x:Int, y:Int, picContent:PicContent) extends Tip
 
 	//methods
 	init()
+
 	//init PicTextTip
 	private def init() = {
 		addClickEvent()
@@ -63,12 +62,11 @@ class TextTip(context: Context, x:Int, y:Int, picContent:PicContent) extends Tip
 		tip_two.getLayoutParams.width = TIP_TWO_WIDTH
 		tip_two.getLayoutParams.height = TIP_TWO_HEIGHT
 		make_view_draggable(view)
-		// tip_close_two.setX(TIP_TWO_WIDTH - 50)
-		// tip_close_two.setY(50)
 	}
 
 	//click the the 
 	def addClickEvent() = {
+		//state two to state one
  		tip_close_two.setOnClickListener(new View.OnClickListener(){
 			def onClick(v: View){
 				Log.i("chxjia", "close state two")
@@ -76,14 +74,18 @@ class TextTip(context: Context, x:Int, y:Int, picContent:PicContent) extends Tip
 			}
 		})
 	}
+
 	//change_to_state_two
 	def state_two() = {
-		state = Tip.STATE_TIP_TWO
-		tip_one.setVisibility(View.GONE)
-		layoutParams.width = TIP_TWO_WIDTH
-		layoutParams.height = TIP_TWO_HEIGHT
-		tip_two.setVisibility(View.VISIBLE) 
+		if(state != Tip.STATE_REMOVABLE){
+			state = Tip.STATE_TIP_TWO
+			tip_one.setVisibility(View.GONE)
+			layoutParams.width = TIP_TWO_WIDTH
+			layoutParams.height = TIP_TWO_HEIGHT
+			tip_two.setVisibility(View.VISIBLE) 
+		}
 	}
+
 	//change_to_state_one
 	def state_one() = {
 		state = Tip.STATE_TIP_ONE
@@ -92,10 +94,13 @@ class TextTip(context: Context, x:Int, y:Int, picContent:PicContent) extends Tip
 		layoutParams.height = TIP_ONE_HEIGHT
 		tip_one.setVisibility(View.VISIBLE) 
 	}
-	//show popUpWindow
+
+	//show popUpWindow 
 	def state_three() = {
-		val tip_three = LayoutInflater.from(context).inflate(R.layout.text_tip_popupwindow, null) 
-		PopWindow.show(context, tip_three, view, null)
+		if(state != Tip.STATE_REMOVABLE){
+			val tip_three = LayoutInflater.from(context).inflate(R.layout.text_tip_popupwindow, null) 
+			PopWindow.show(context, tip_three, view, null)
+		}
 	}
 
 	//gesturedetector
@@ -117,20 +122,61 @@ class TextTip(context: Context, x:Int, y:Int, picContent:PicContent) extends Tip
 			logev("longpressed")
 			if(state == Tip.STATE_TIP_ONE){
 				logev("removable")
-				val container = LayoutInflater.from(context).inflate(R.layout.confirm_dialog, null).asInstanceOf[AbsoluteLayout]
+				val container = LayoutInflater.from(context).inflate(R.layout.empty_popup_window, null).asInstanceOf[AbsoluteLayout]
+				//record the pos current
+				val pre_x = view.getX()
+				val pre_y = view.getY()
+
+				//get location to the screen
+				val location = new Array[Int](2)
+				view.getLocationOnScreen(location)
+				view.setX(location(0))
+				view.setY(location(1))
+
 				// container.addView(view)
+				// view should removed first that can be added to a new viewgroup
 				picContent.PIC.removeView(view)
 				picContent.state = PicContent.STATE_CODE("uneditable")
 				container.addView(view)
-				view.setX(300)
-				view.setY(400)
+				tip_close_one.setVisibility(View.VISIBLE)
+
+				//called when dismissed the popup window
 				def dismissHandler() = {
 					Log.i("chxjia", "call dismissHandler")
 					container.removeView(view)
+					tip_close_one.setVisibility(View.GONE)
 					picContent.PIC.addView(view)
+
+					view.setX(pre_x)
+					view.setY(pre_y)
+
 					picContent.state = PicContent.STATE_CODE("idle")
 				}
-		        PopWindow.show(context, container, picContent.PIC, dismissHandler) //
+
+				var win = new PopupWindow(container, -1, -1, true)
+				win.setFocusable(true)
+				win.setOutsideTouchable(true)
+				win.showAtLocation(picContent.PIC, Gravity.CENTER, 0, 0)
+				//container click handler
+				container.setOnClickListener(new View.OnClickListener() {
+		     		def onClick(view: View)  {
+		     			dismissHandler()
+		     			win.dismiss()
+		     			win = null
+		     		}
+		     	})
+		     	//close_event
+		     	tip_close_one.setOnClickListener(new View.OnClickListener(){
+		     		def onClick(view: View) {
+		     			Log.i("chxjia", "click close one")
+		     			container.removeView(view)
+		     			picContent.state =PicContent.STATE_CODE("idle") 
+		     			picContent.removeTip(TextTip.this)
+		     			win.dismiss()
+		     			win = null
+		     		}	
+	     		})
+		        // PopWindow.show(context, container, picContent.PIC, dismissHandler) //
 			} 
 			false
 		}
