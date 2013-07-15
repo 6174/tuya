@@ -15,7 +15,7 @@ import com.cxj.util._
 object PopWindow {
 	def show(context: Context, layout: Int, anchor: View) {
 		Log.i("chxjia", "show pop window")
-		val popview = LayoutInflater.from(context).inflate(layout, null) 
+		val popview = LayoutInflater.from(context).inflate(layout, null)
 		//initial content, and size
 		var win = new PopupWindow(popview, 
 			// LayoutParams.FILL_PARENT, 
@@ -38,7 +38,7 @@ object PopWindow {
 	/**
 	 *@DESC show a popwindow with a view
 	 */
-	def show(context: Context, view: View, anchor: View) {
+	def show(context: Context, view: View, anchor: View, handler: () => Unit) {
 		Log.i("chxjia", "show text tip")
 		var win = new PopupWindow(view, -1, -1, true)
 		win.setFocusable(true)
@@ -46,6 +46,7 @@ object PopWindow {
 		win.showAtLocation(anchor, Gravity.CENTER, 0, 0)
 		view.setOnClickListener(new View.OnClickListener() {
      		def onClick(view: View)  {
+     			handler()
      			win.dismiss()
      			win = null
      		}

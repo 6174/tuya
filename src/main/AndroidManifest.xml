@@ -27,8 +27,8 @@
         </activity> -->
         <activity android:name=".homeActivity">
         </activity>
-        <activity android:name=".createPicActivity">
-        </activity>
+       <!--  <activity android:name=".createPicActivity">
+        </activity> -->
         <activity android:name=".picTalkActivity">
         </activity>
         <activity android:name=".settingActivity">

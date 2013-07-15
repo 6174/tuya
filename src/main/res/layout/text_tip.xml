@@ -11,13 +11,14 @@
       android:background="@drawable/text_tip">
       <TextView
          android:id="@+id/close_tip_one"
-         android:text="X"
-         android:layout_width="5dp"
-         android:layout_height="5dp"
+         android:layout_width="25dp"
+         android:layout_height="25dp"
          android:background="@drawable/minus_icon"
          android:layout_alignParentTop="true"
+         android:layout_marginLeft="-10dp"
+         android:layout_marginBottom="-10dp"
          android:layout_alignParentRight="true"
-         android:visibility="gone"/>
+         android:visibility="visible"/>
    </RelativeLayout>
    <!-- tip-state-two -->
    <RelativeLayout

@@ -12,6 +12,7 @@ import android.view.ViewGroup.LayoutParams
 import android.widget._
 import android.util.Log
 import android.util.DisplayMetrics
+import collection.mutable.HashMap
 
 import java.io.FileNotFoundException
 import java.util.ArrayList
@@ -24,10 +25,11 @@ object Tip {
 	val STATE_TIP_ONE = 1
 	val STATE_TIP_TWO = 2
 }
-class Tip(val context: Context, val x:Int, val y:Int){
-
+class Tip(val context: Context, val x:Int, val y:Int, val picContent: PicContent){
+	val id = guid()
+	val view:View = null
 }
-class TextTip(context: Context, x:Int, y:Int ) extends Tip(context, x, y){
+class TextTip(context: Context, x:Int, y:Int, picContent:PicContent) extends Tip(context, x, y, picContent){
 	//constants
 	val TIP_ONE_HEIGHT = dip2px(context, 45)
 	val TIP_ONE_WIDTH = dip2px(context, 45)
@@ -40,7 +42,7 @@ class TextTip(context: Context, x:Int, y:Int ) extends Tip(context, x, y){
 	var state = Tip.STATE_TIP_ONE
 
 	//UI elements
-	val view = LayoutInflater.from(context).inflate(Tip.TEXT_LAYOUT, null) 
+	override val view = LayoutInflater.from(context).inflate(Tip.TEXT_LAYOUT, null) 
 	view.setLayoutParams(new LayoutParams(TIP_ONE_WIDTH, TIP_ONE_HEIGHT))
 	view.setX(x)
 	view.setY(y)
@@ -93,7 +95,7 @@ class TextTip(context: Context, x:Int, y:Int ) extends Tip(context, x, y){
 	//show popUpWindow
 	def state_three() = {
 		val tip_three = LayoutInflater.from(context).inflate(R.layout.text_tip_popupwindow, null) 
-		PopWindow.show(context, tip_three, view)
+		PopWindow.show(context, tip_three, view, null)
 	}
 
 	//gesturedetector
@@ -115,9 +117,20 @@ class TextTip(context: Context, x:Int, y:Int ) extends Tip(context, x, y){
 			logev("longpressed")
 			if(state == Tip.STATE_TIP_ONE){
 				logev("removable")
-				// state = Tip.STATE_REMOVABLE
-				
-
+				val container = LayoutInflater.from(context).inflate(R.layout.confirm_dialog, null).asInstanceOf[AbsoluteLayout]
+				// container.addView(view)
+				picContent.PIC.removeView(view)
+				picContent.state = PicContent.STATE_CODE("uneditable")
+				container.addView(view)
+				view.setX(300)
+				view.setY(400)
+				def dismissHandler() = {
+					Log.i("chxjia", "call dismissHandler")
+					container.removeView(view)
+					picContent.PIC.addView(view)
+					picContent.state = PicContent.STATE_CODE("idle")
+				}
+		        PopWindow.show(context, container, picContent.PIC, dismissHandler) //
 			} 
 			false
 		}

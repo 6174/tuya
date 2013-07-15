@@ -12,6 +12,7 @@ import android.view.ViewGroup.LayoutParams
 import android.widget._
 import android.util.Log
 
+import collection.mutable.HashMap
 import java.io.FileNotFoundException
 import java.util.ArrayList
 
@@ -23,9 +24,9 @@ import com.cxj.util._
 object PicContent{
 	val STATE_CODE = Map(
 		"idle" -> 0, 
-		"add_text" -> 1, 
-		"add_voice" -> 2, 
-		"add_info" -> 3, 
+		"can_add_text" -> 1, 
+		"can_add_voice" -> 2, 
+		"can_add_info" -> 3, 
 		"uneditable" -> 4, 
 		"drag_pic" -> 5
 		)
@@ -37,7 +38,7 @@ class PicContent(val context: Context,val wrapper:ViewGroup) {
 
 	//create pic content
   // val ACTIVITY = context.asInstanceOf[createPicActivity]
-  val picNotesArr = new ArrayList[View]()
+  val picTips = new HashMap[String, Tip]()
 	val PIC = new AbsoluteLayout(context)
 
 	PIC.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT))
@@ -62,6 +63,8 @@ class PicContent(val context: Context,val wrapper:ViewGroup) {
 	
 	/**
 	 *@DESC set pic image
+	 *@Method initWithBitmao
+	 *@param {Bitmap} bitmap 
 	 */
 	def initWithBitmap(bitmap:Bitmap) {
 		Log.i("chxjia", "init picContent")
@@ -148,19 +151,11 @@ class PicContent(val context: Context,val wrapper:ViewGroup) {
     	}
     	//handleOnSingleTapUp
     	def handleOnSingleTapUp(event:MotionEvent) = {
-			  def add_tip(x:Int, y:Int ) = {
-			  	Log.i("chxjia", "add tip at " + x.toString + ", " + y.toString)
-			  	val btn = new Button(context)
-			  	btn.setText("TIP")
-			    btn.setX(x)
-			    btn.setY(y)
-			  	PIC.addView(btn)
-			  }
-			  val x = event.getX().toInt
-			  val y = event.getY().toInt
-			  // add_tip(x, y)
-			  val tip = new TextTip(context, x, y)
-			  PIC.addView(tip.view)
+    		if(state != PicContent.STATE_CODE("uneditable")){
+				  val x = event.getX().toInt
+				  val y = event.getY().toInt
+				  addText(x, y)
+    		}
     	}
     	//dragView
     	def dragView(v:View, event:MotionEvent):Boolean = {
@@ -231,15 +226,27 @@ class PicContent(val context: Context,val wrapper:ViewGroup) {
 	 *@DESC add text handler
 	 */
 	def addText(x:Int, y:Int) {
-
+		// add_tip(x, y)
+		Log.i("chxjia", "add text Tip" + " tip_size:" + picTips.size.toString)
+		val tip = new TextTip(context, x, y, this)
+		picTips += (tip.id -> tip)
+	  PIC.addView(tip.view)
 	}
-
+	
 	/**
 	 *@DESC add voice handler
 	 */
 	def addInfo(x:Int, y:Int) {
 
 	}
+
+	/**
+	 *@DESC remove Tip
+	 */
+	def removeTip(tip:Tip) = {
+		PIC.removeView(tip.view)
+		picTips -= tip.id
+	} 
 	/*
 	 *@DESC add textNote event
 	 */
