@@ -27,6 +27,7 @@ import java.io.File
 import java.util.ArrayList
 import java.util.Timer
 import java.util.TimerTask
+import java.util.Date
 
 import com.cxj.util._
 /**
@@ -39,6 +40,10 @@ class AudioRecorder(val context:Context, anchor:View) {
 	var path = ""
 	var startPlay = false
 	var startRecord = false
+
+	var startRecordTime:Date = null
+	var startPlayTime:Date = null
+
 	//UI elements
 	lazy val container = LayoutInflater.from(context).inflate(R.layout.audio_recorder, null) 
 	lazy val playBtn = container.findViewById(R.id.play_btn).asInstanceOf[Button]
@@ -57,8 +62,31 @@ class AudioRecorder(val context:Context, anchor:View) {
 	//UI thread handler
 	val audioRecorderHandler = new Handler(){
 		override def handleMessage(msg: Message){
+			Log.i("chxjia","handler")
+			def getDiffDateString(start:Date, end:Date):String = {
+				val startTime = start.getTime()
+				val endTime = end.getTime()
+				var deltaTime = endTime - startTime
+
+				def fill(num:Double):String = {
+					if(num >= 10) num.toInt.toString
+					else "0" + num.toInt.toString
+				}
+				val hours = fill(deltaTime / (3600*1000))
+				deltaTime %= (3600*1000)
+
+				val minutes = fill(deltaTime / 60000)
+				deltaTime %= 60000
+
+				val seconds = fill(deltaTime / 1000)
+				deltaTime %= 1000
+				val mseconds = fill(deltaTime)
+
+				hours + ":" + minutes + ":" + seconds
+				// + ":" + mseconds
+			}
 			msg.what match{
-				case 1 => Log.i("chxjia", "handler1")
+				case 1 => audioTimeText.setText(getDiffDateString(startRecordTime, new Date()))
 				case 2 => Log.i("chxjia", "2")
 				case _ => false
 			}
@@ -109,6 +137,7 @@ class AudioRecorder(val context:Context, anchor:View) {
 	private def setPath() = {
 		path = "/sdcard/test.mp3"
 		path = android.os.Environment.getExternalStorageDirectory().getAbsolutePath() + "/test.mp3"
+		Log.i("chxjia", path)
 		val state = android.os.Environment.getExternalStorageState()
 		if(state != android.os.Environment.MEDIA_MOUNTED){
 			throw new IOException("chxjia: no external storage statecode:" + state.toString)
@@ -136,6 +165,7 @@ class AudioRecorder(val context:Context, anchor:View) {
 		}
 		mr.start()
 		recordTimer = new Timer()
+		startRecordTime = new Date()
 		val recordTask = new TimerTask(){
 			def run(){
 				val message = new Message()
@@ -143,7 +173,7 @@ class AudioRecorder(val context:Context, anchor:View) {
 				audioRecorderHandler.sendMessage(message)
 			}
 		}
-		recordTimer.schedule(recordTask, 500)
+		recordTimer.schedule(recordTask, 0, 1000/60)
 		recordBtn.setText("stop")
 	}
 	//stop
@@ -155,8 +185,6 @@ class AudioRecorder(val context:Context, anchor:View) {
 		recordTimer.cancel()
 		recordTimer = null
 	}
-
-
     private def onPlay() {  
         if (startPlay) {  
             stopPlaying() 
@@ -165,7 +193,6 @@ class AudioRecorder(val context:Context, anchor:View) {
         }  
         startPlay = !startPlay
     }  
-  
     private def startPlaying() {  
         mp = new MediaPlayer();  
         try {  
@@ -183,12 +210,14 @@ class AudioRecorder(val context:Context, anchor:View) {
         playBtn.setText("play")
     } 
 
+    def setProgressTime(){
+
+    }
 	//error
 	private def error(str:String) = {
 		val builder = new AlertDialog.Builder(context)
 		builder.setTitle("Error").setMessage(str).setPositiveButton("sure", null).show()
 	}
-
 	def show(){
 		setupMr()
 		setEventHandlers()
