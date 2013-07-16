@@ -52,4 +52,8 @@ object PopWindow {
      		}
      	})
 	}
+	def show(context: Context, view:View, anchor:View){
+		def temp() = false
+		show(context, view, anchor, temp) 
+	}
 } 

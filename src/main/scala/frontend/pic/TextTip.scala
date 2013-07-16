@@ -47,15 +47,16 @@ class TextTip(context: Context, x:Int, y:Int, picContent:PicContent) extends Tip
 		})
 	}
 	//change_to_state_two
-	def state_two() = {
-		if(state != Tip.STATE_REMOVABLE){
-			state = Tip.STATE_TIP_TWO
-			tip_one.setVisibility(View.GONE)
-			layoutParams.width = TIP_TWO_WIDTH
-			layoutParams.height = TIP_TWO_HEIGHT
-			tip_two.setVisibility(View.VISIBLE) 
-		}
-	}
+	// def state_two() = {
+	// 	if(state != Tip.STATE_REMOVABLE){
+	// 		state = Tip.STATE_TIP_TWO
+	// 		tip_one.setVisibility(View.GONE)
+	// 		layoutParams.width = TIP_TWO_WIDTH
+	// 		layoutParams.height = TIP_TWO_HEIGHT
+	// 		tip_two.setVisibility(View.VISIBLE) 
+	// 	}
+	// }
+
 	//change_to_state_one
 	def state_one() = {
 		state = Tip.STATE_TIP_ONE
@@ -64,11 +65,12 @@ class TextTip(context: Context, x:Int, y:Int, picContent:PicContent) extends Tip
 		layoutParams.height = TIP_ONE_HEIGHT
 		tip_one.setVisibility(View.VISIBLE) 
 	}
+
 	//show popUpWindow 
 	def state_three() = {
 		if(state != Tip.STATE_REMOVABLE){
 			val tip_three = LayoutInflater.from(context).inflate(R.layout.text_tip_popupwindow, null) 
-			PopWindow.show(context, tip_three, view, null)
+			PopWindow.show(context, tip_three, view)
 		}
 	}
 	//gesturedetector
@@ -76,9 +78,7 @@ class TextTip(context: Context, x:Int, y:Int, picContent:PicContent) extends Tip
 		//onSingleTapUp
 		def onSingleTapUp(ev:MotionEvent):Boolean = {
    			state match {
-   				case Tip.STATE_TIP_ONE => state_two()
-   				//state_two_show pop_up_window
-   				case Tip.STATE_TIP_TWO => state_three()
+   				case Tip.STATE_TIP_ONE => state_three()
    				//state_remoable
    				case Tip.STATE_REMOVABLE => true
    				case _ => 
