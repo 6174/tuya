@@ -36,6 +36,7 @@ class VoiceTip(context: Context, x:Int, y:Int, picContent:PicContent) extends Ti
 	//gesturedetector
 	private val gestureDetector = new GestureDetector(new GestureDetector.OnGestureListener(){
 		def onSingleTapUp(ev:MotionEvent):Boolean = {
+			singleTapUpHandler(ev)
 			false
 		}
 		def onLongPress(ev:MotionEvent) = onLongPressHandler(ev)
@@ -46,6 +47,10 @@ class VoiceTip(context: Context, x:Int, y:Int, picContent:PicContent) extends Ti
 		def logev(t:String, ev:MotionEvent) = Log.i("chxjia", t + ": " + ev.getX() + "," + ev.getY())
 		def logev(t:String) = Log.i("chxjia", t)
 	})
+	private def singleTapUpHandler(ev:MotionEvent) = {
+		val recorder = new  AudioRecorder(context, picContent.PIC)
+        recorder.show()
+	}
 	private def init() = {
 		tip_one.getLayoutParams.width = TIP_ONE_WIDTH
 		tip_one.getLayoutParams.height = TIP_ONE_HEIGHT

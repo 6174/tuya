@@ -22,7 +22,8 @@
         <!-- info-bar -->
         <LinearLayout
           android:layout_width="fill_parent"
-          android:layout_height="100dp">
+          android:layout_height="100dp"
+          android:padding="10dp">
           <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent">
@@ -30,6 +31,7 @@
               android:id="@+id/dismiss_btn"
               android:layout_height="50dp"
               android:layout_width="50dp"
+              android:layout_marginTop="10dp"
               android:layout_alignParentTop="true"
               android:layout_alignParentRight="true"
               android:gravity="center"
