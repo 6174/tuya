@@ -46,16 +46,6 @@ class TextTip(context: Context, x:Int, y:Int, picContent:PicContent) extends Tip
 			}
 		})
 	}
-	//change_to_state_two
-	// def state_two() = {
-	// 	if(state != Tip.STATE_REMOVABLE){
-	// 		state = Tip.STATE_TIP_TWO
-	// 		tip_one.setVisibility(View.GONE)
-	// 		layoutParams.width = TIP_TWO_WIDTH
-	// 		layoutParams.height = TIP_TWO_HEIGHT
-	// 		tip_two.setVisibility(View.VISIBLE) 
-	// 	}
-	// }
 
 	//change_to_state_one
 	def state_one() = {
@@ -69,8 +59,14 @@ class TextTip(context: Context, x:Int, y:Int, picContent:PicContent) extends Tip
 	//show popUpWindow 
 	def state_three() = {
 		if(state != Tip.STATE_REMOVABLE){
-			val tip_three = LayoutInflater.from(context).inflate(R.layout.text_tip_popupwindow, null) 
-			PopWindow.show(context, tip_three, view)
+			// val tip_three = LayoutInflater.from(context).inflate(R.layout.text_tip_popupwindow, null) 
+			// PopWindow.show(context, tip_three, view)
+			val textEditor = new TextEditor(context, picContent.PIC){
+				override def onSave() = {
+					Log.i("chxjia", "call onsave Event")
+				}
+			}
+			textEditor.show()
 		}
 	}
 	//gesturedetector

@@ -26,9 +26,12 @@
    				<EditText
    					android:id="@+id/tip_textarea"
                   android:background="#fefefe"
+                  android:inputType="textMultiLine"
+                  android:singleLine="false"
+                  android:gravity="top"
    					android:layout_width="fill_parent"
    					android:layout_height="fill_parent"
-   					android:text="write something here"
+   					android:hint="write something here"
    					android:padding="5dp"/>
    				<!-- ok_button -->
    				<TextView
