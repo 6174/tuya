@@ -47,6 +47,7 @@
 [0m[[0mdebug[0m] [0m=> res/drawable/text_tip.png[0m
 [0m[[0mdebug[0m] [0m=> res/drawable/voice_tip_off.png[0m
 [0m[[0mdebug[0m] [0m=> res/drawable/voice_tip_on.png[0m
+[0m[[0mdebug[0m] [0m=> res/layout/audio_recorder.xml[0m
 [0m[[0mdebug[0m] [0m=> res/layout/bottom_bar.xml[0m
 [0m[[0mdebug[0m] [0m=> res/layout/confirm_dialog.xml[0m
 [0m[[0mdebug[0m] [0m=> res/layout/contacts_content.xml[0m

@@ -59,7 +59,9 @@ class createPicActivity extends Activity with TypedActivity {
     btn.setOnClickListener(new View.OnClickListener(){
       def onClick(view: View) {
         Log.i("chxjia", "click sendBtb")
-        PopWindow.show(createPicActivity.this, R.layout.confirm_dialog, pic_body_layout)
+        // PopWindow.show(createPicActivity.this, R.layout.confirm_dialog, pic_body_layout)
+        val recorder = new  AudioRecorder(createPicActivity.this, pic_body_layout)
+        recorder.show()
       }
     })
   }
