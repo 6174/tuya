@@ -37,8 +37,8 @@ object PicContent{
 class PicContent(val context: Context,val wrapper:ViewGroup) {
 
 	//create pic content
-  // val ACTIVITY = context.asInstanceOf[createPicActivity]
-  val picTips = new HashMap[String, Tip]()
+    // val ACTIVITY = context.asInstanceOf[createPicActivity]
+  	val picTips = new HashMap[String, Tip]()
 	val PIC = new AbsoluteLayout(context)
 
 	PIC.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT))
