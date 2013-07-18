@@ -18,8 +18,8 @@ import java.util.ArrayList
 
 import com.cxj.util._
 
-class TextEditor(val context:Context, anchor:View){
-	var text = ""
+class TextEditor(val context:Context, anchor:View, content:String){
+	var text = content
 	lazy val container = LayoutInflater.from(context).inflate(R.layout.text_tip_popupwindow, null) 
 	lazy val editText = container.findViewById(R.id.tip_textarea).asInstanceOf[EditText]
 	lazy val okBtn = container.findViewById(R.id.ok_button)
@@ -39,11 +39,11 @@ class TextEditor(val context:Context, anchor:View){
 		})
 	}
 
-	def onSave() = {}
+	def onSave(text:String) = {}
 
 	private def save(){
 		text = editText.getText().toString
-		onSave()
+		onSave(text)
 	}
 
 	def setText(str:String){
@@ -58,6 +58,9 @@ class TextEditor(val context:Context, anchor:View){
 
 	def show(){
 		setEventHandlers()
+		if(text.trim != ""){
+			editText.setText(text)
+		}
 		popUpWin.showAtLocation(anchor, Gravity.CENTER, 0, 0)
 	}
 

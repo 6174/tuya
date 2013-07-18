@@ -61,9 +61,10 @@ class TextTip(context: Context, x:Int, y:Int, picContent:PicContent) extends Tip
 		if(state != Tip.STATE_REMOVABLE){
 			// val tip_three = LayoutInflater.from(context).inflate(R.layout.text_tip_popupwindow, null) 
 			// PopWindow.show(context, tip_three, view)
-			val textEditor = new TextEditor(context, picContent.PIC){
-				override def onSave() = {
-					Log.i("chxjia", "call onsave Event")
+			val textEditor = new TextEditor(context, picContent.PIC, content){
+				override def onSave(text:String) = {
+					// Log.i("chxjia", "call onsave Event")
+					content = text
 				}
 			}
 			textEditor.show()
