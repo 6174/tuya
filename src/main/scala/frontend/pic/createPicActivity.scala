@@ -53,6 +53,7 @@ class createPicActivity extends Activity with TypedActivity {
     setOpenCameraEvent()
     setSendEvent()
     setToolClickEvent()
+    Log.i("chxjia", getExternalFilesDir(null).getAbsolutePath())
   }
   
   /**

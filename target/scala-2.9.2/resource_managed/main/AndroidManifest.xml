@@ -10,7 +10,7 @@
     
     <application android:debuggable="true" android:label="@string/app_name" android:icon="@drawable/android:star_big_on">
 
-        <activity android:name=".createPicActivity" android:label="@string/app_name">
+        <activity android:name=".indexActivity" android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"></action>
                 <category android:name="android.intent.category.LAUNCHER"></category>
@@ -22,7 +22,8 @@
        
         <activity android:name=".homeActivity">
         </activity>
-        
+        <activity android:name=".createPicActivity">
+        </activity>
         <activity android:name=".picTalkActivity">
         </activity>
         <activity android:name=".settingActivity">

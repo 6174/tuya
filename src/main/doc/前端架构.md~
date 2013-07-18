@@ -1,0 +1,27 @@
+##tuya 前端架构
+
+`技术选择:`
+  tuya是基于通讯录的图片交流工具， 基于android平台开发， 所用技术主要为scala，部分使用java。 项目初期选择的技术为titanium（基于javascript的embed移动开发框架） ， 但是框架应用到项目开发时出现了大量问题， titanium 现在还不成熟， 无论是文档还是技术架构都无法适应正式的android项目开发。  最终因为无法满足项目性能需求， 放弃了titanium 最终选择的技术为scala， 对于scala的android开发， scala有几大优势：
+1. 近忽完美兼容java， 也就是java的所有程序都可以通过scala调用， 这也是scala可以写android的原因
+2. 简介的语言设计， 强大的类型推断系统， 函数式加面向对象编程
+3. 静态语言， 不失性能， 接近java的速度
+
+`应用架构设计:`
+   android应用分为两大部分 frontend, backend, 前端负责UI交互， 后端负责和tuya数据处理。
+  
+   frontend: indexActivity, loginActivity, registActivity, homeActivity, picTalkActivity, createPicActivity, likeActivity
+
+   * indexActivity: 用户第一次登录会出现， 包含关于tuya的介绍
+   * loginActivity: 登录页面
+   * registActivity: 注册页面
+   * picTalkActivity: tuya对话页面
+   * createPicActivity: 创建tuya页面
+   * homectivity: 主应用页面， 因为android一个Activity为一个线程，为了减少内存开销以及快速响应， homeActivity 包含了多个页面，包括homeContent, settingContent, contactsContent 
+       1. homeContent: 应用主页， 所有的消息通知， tuya信息都会出现再主页
+       2. settingContent: 应用设置页面 
+       3. contactsContent: 联系人页面
+   * likeActivity: 涂鸦收藏页面
+   
+   backend: ContactModule, PicModule, UserModule, ContactManager, HttpHelper, 
+      
+
