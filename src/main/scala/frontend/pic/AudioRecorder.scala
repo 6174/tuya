@@ -33,7 +33,7 @@ import com.cxj.util._
 /**
  *@DESC audio recoder
  */
-class AudioRecorder(val context:Context, anchor:View) {
+class AudioRecorder(val context:Context, anchor:View, audio_path:String) {
 	//Attrs
 	var mr:MediaRecorder = null
 	var mp:MediaPlayer = null
@@ -43,6 +43,8 @@ class AudioRecorder(val context:Context, anchor:View) {
 
 	var startRecordTime:Date = null
 	var startPlayTime:Date = null
+
+	var trushed = false
 
 	//UI elements
 	lazy val container = LayoutInflater.from(context).inflate(R.layout.audio_recorder, null) 
@@ -93,6 +95,7 @@ class AudioRecorder(val context:Context, anchor:View) {
 			super.handleMessage(msg)
 		}
 	}
+
 	var recordTimer:Timer = null
 
 	//setup events mediarecorder
@@ -118,6 +121,7 @@ class AudioRecorder(val context:Context, anchor:View) {
 			def onClick(view: View){
 				Log.i("chxjia", "click record Btn")
 				onRecord()		
+				trushed = false
 			}
 		})
 		playBtn.setOnClickListener(new View.OnClickListener(){
@@ -128,15 +132,23 @@ class AudioRecorder(val context:Context, anchor:View) {
 		})
 		dismissBtn.setOnClickListener(new View.OnClickListener() {
      		def onClick(view: View)  {
+     			if(!trushed) onSave(path)
      			popUpWin.dismiss()
      			popUpWin = null
      		}
      	})
+     	trushBtn.setOnClickListener(new View.OnClickListener(){
+     		def onClick(view: View) {
+     			onTrush()
+     			trushed = true
+     			setDefaultVoiceText()
+     			recordBtn.setEnabled(true)
+     			playBtn.setEnabled(false)
+     		}	
+ 		})
 	}
 	//setpath
 	private def setPath() = {
-		path = "/sdcard/test.mp3"
-		path = android.os.Environment.getExternalStorageDirectory().getAbsolutePath() + "/test.mp3"
 		Log.i("chxjia", path)
 		val state = android.os.Environment.getExternalStorageState()
 		if(state != android.os.Environment.MEDIA_MOUNTED){
@@ -156,6 +168,7 @@ class AudioRecorder(val context:Context, anchor:View) {
 		}
 		startRecord = !startRecord
 	}
+	
 	//record
 	private def startRecording() {
 		try{
@@ -181,6 +194,7 @@ class AudioRecorder(val context:Context, anchor:View) {
 		mr.stop()
 		recordBtn.setText("Record")
 		recordBtn.setEnabled(false)
+		playBtn.setEnabled(true)
 		mr.release()
 		recordTimer.cancel()
 		recordTimer = null
@@ -210,17 +224,40 @@ class AudioRecorder(val context:Context, anchor:View) {
         playBtn.setText("play")
     } 
 
-    def setProgressTime(){
-
+    def setDefaultVoiceText(){
+    	audioTimeText.setText("00:00:00")
     }
+    def setProgressTime() = {}
+    def onSave(path:String) = {}
+    def onTrush() = {}
 	//error
 	private def error(str:String) = {
 		val builder = new AlertDialog.Builder(context)
 		builder.setTitle("Error").setMessage(str).setPositiveButton("sure", null).show()
 	}
+
 	def show(){
+		init()
 		setupMr()
 		setEventHandlers()
 		popUpWin.showAtLocation(anchor, Gravity.CENTER, 0, 0)
+	}
+
+	def init(){
+		path = audio_path
+		Log.i("chxjia", "initAudioPath:" + path + ";")
+		if(path != ""){
+			recordBtn.setEnabled(false)
+			playBtn.setEnabled(true)
+		}else{
+			path = audio_path
+			if(path == ""){
+				val time = (new Date()).getTime()
+				path = "/"+ guid() + time +".mp3"
+				path = android.os.Environment.getExternalStorageDirectory().getAbsolutePath() + path
+			}
+			playBtn.setEnabled(false)
+			recordBtn.setEnabled(true)
+		}
 	}
 }

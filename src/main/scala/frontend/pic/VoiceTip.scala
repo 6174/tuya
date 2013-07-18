@@ -20,7 +20,7 @@ import java.util.ArrayList
 import com.cxj.util._
 
 class VoiceTip(context: Context, x:Int, y:Int, picContent:PicContent) extends Tip(context, x, y, picContent){
-	var voice_record = ""
+	var audio_path = ""
 	var create_time = ""
 
 	override val view = LayoutInflater.from(context).inflate(Tip.VOICE_LAYOUT, null)
@@ -47,10 +47,21 @@ class VoiceTip(context: Context, x:Int, y:Int, picContent:PicContent) extends Ti
 		def logev(t:String, ev:MotionEvent) = Log.i("chxjia", t + ": " + ev.getX() + "," + ev.getY())
 		def logev(t:String) = Log.i("chxjia", t)
 	})
+
 	private def singleTapUpHandler(ev:MotionEvent) = {
-		val recorder = new  AudioRecorder(context, picContent.PIC)
+		val recorder = new  AudioRecorder(context, picContent.PIC, audio_path){
+			override def onSave(path:String){
+				audio_path = path
+				Log.i("chxjia", "ontsave called" + "path:" + audio_path + ";")
+			}
+			override def onTrush(){
+				audio_path = ""
+				Log.i("chxjia", "ontrush called" + "path:" + audio_path + ";")
+			}
+		}
         recorder.show()
 	}
+
 	private def init() = {
 		tip_one.getLayoutParams.width = TIP_ONE_WIDTH
 		tip_one.getLayoutParams.height = TIP_ONE_HEIGHT
