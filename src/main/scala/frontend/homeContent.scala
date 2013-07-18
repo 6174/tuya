@@ -31,7 +31,7 @@ class HomeContent(val context:Context){
    *@DESC init method
    */
   def init() = {
-   	setTuyaDynamicListAdapter()
+  	setTuyaDynamicListAdapter()
   }
 
   /**
@@ -48,19 +48,19 @@ class HomeContent(val context:Context){
   }
 
 
- 	def show() = {
- 		if (!isShow){
- 			content.setVisibility(View.VISIBLE)
- 			isShow = true
- 		}
- 	}
+  def show() = {
+  	if (!isShow){
+  		content.setVisibility(View.VISIBLE)
+  		isShow = true
+  	}
+  }
 
- 	def hide() = {
- 		if(isShow){
- 			content.setVisibility(View.GONE)
- 			isShow = false
- 	  }
- 	}
+  def hide() = {
+  	if(isShow){
+  		content.setVisibility(View.GONE)
+  		isShow = false
+    }
+  }
 
   def testArrayAdapter() = {
 	  Log.i("chxjia", "testArrayAdapter")
@@ -101,7 +101,7 @@ class HomeContent(val context:Context){
 	  val data:Array[Map[String, String]] ) extends BaseAdapter {
 	  private  val inflater = LayoutInflater.from(context)
 	  private  val layout = R.layout.home_dynamic_state_list_item
-  	Log.i("chxjia", "size: " + data.size.toString)
+   Log.i("chxjia", "size: " + data.size.toString)
 
 	  override def getCount():Int = data.size 
 	  override def getItem(arg0: Int):Object = null
@@ -110,24 +110,24 @@ class HomeContent(val context:Context){
 	  override def getViewTypeCount():Int = 2
 
 	  override def getItemViewType(position:Int):Int = {
-	  	var t = super.getItemViewType(position)
-	  	try {
-	  		t = if(position == 0) -1 else 1
-	  	} catch {
-	  		case e => Log.i("chxjia", e.toString)
-	  		case _ => 0
-	  	}
-	  	t
+	   var t = super.getItemViewType(position)
+	   try {
+	   	t = if(position == 0) -1 else 1
+	   } catch {
+	   	case e => Log.i("chxjia", e.toString)
+	   	case _ => 0
+	   }
+	   t
 	  }
 
 	  override def getView(position: Int, convertView: View, parent: ViewGroup ):View = {
 	    var holder:ViewHolder = null
 	    var view = convertView
 	    if(view == null) {
-	    		Log.i("chxjia", "At nullview:" + position.toString)
+	     	Log.i("chxjia", "At nullview:" + position.toString)
 		      if(position == 0){
-		      	view = inflater.inflate(R.layout.search_box, null)
-		      	// view.getLayoutParams().height = dip2px(context, 60)
+		       view = inflater.inflate(R.layout.search_box, null)
+		       // view.getLayoutParams().height = dip2px(context, 60)
 		      } else {
 			      holder = new ViewHolder()
 			      view = inflater.inflate(this.layout, null)
@@ -145,10 +145,10 @@ class HomeContent(val context:Context){
 				    })
 		      }
 	    } else {
-	    	if(position > 0) holder = view.getTag().asInstanceOf[ViewHolder]
+	     if(position > 0) holder = view.getTag().asInstanceOf[ViewHolder]
 	    }
 	    if(position > 0){
-    		Log.i("chxjia", "At:" + position.toString)
+     	Log.i("chxjia", "At:" + position.toString)
 		    holder.title.setText(data(position-1)("title"))
 		    holder.info.setText(data(position-1)("info"))
 	    }

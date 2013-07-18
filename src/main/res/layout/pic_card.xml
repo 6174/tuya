@@ -31,24 +31,32 @@
           android:layout_toRightOf="@+id/pic_user_img"/>
       </RelativeLayout>
       <!--card-content-->
+
       <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="240dp">
-            <LinearLayout
+            <AbsoluteLayout
               android:id="@+id/layout_top"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
               android:background="#00ff00"
               android:layout_alignParentTop="true">
-              <TextView 
+              <!-- <TextView 
                 android:id="@+id/textviewasd"
                 android:background="#00fff3"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:gravity="center"
-                android:text="pic card"/>
-            </LinearLayout>
+                android:text="pic card"/> -->
+                <TextView
+                  android:background="@drawable/index_bg"
+                  android:layout_width="600dp"
+                  android:layout_height="600dp"
+                  android:layout_x="-100dp"
+                  android:layout_y="-100dp"/>
+            </AbsoluteLayout>
       </RelativeLayout>
+
       <!-- card-info -->
       <RelativeLayout
         android:layout_width="fill_parent"

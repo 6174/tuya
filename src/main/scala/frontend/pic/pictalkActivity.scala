@@ -35,6 +35,7 @@ class picTalkActivity extends Activity with TypedActivity {
 
   def init() = {
     initReplyEvent()
+    setTalkListAdapter()
   }
 
   /**
@@ -53,6 +54,11 @@ class picTalkActivity extends Activity with TypedActivity {
     })
   }
 
+  private def setTalkListAdapter() = {
+    val size = 10
+    val adapter = new PicTalkListAdapter(this)
+    pictalk_list.setAdapter(adapter)
+  }
   /**
    *@DESC contact_view_holder
    */
@@ -64,18 +70,21 @@ class picTalkActivity extends Activity with TypedActivity {
   /**
    *@DESC contactsListAdapter
    */
-  class picTalkListAdapter(
+  class PicTalkListAdapter(
     val context: Context
     ) extends BaseAdapter {
     private  val inflater = LayoutInflater.from(context)
     private  val card_layout= R.layout.pic_card
 
-    override def getCount():Int =  1
+    override def getCount():Int =  10
     override def getItem(arg0: Int):Object = null
     override def getItemId(arg0: Int):Long = 0
     override def getView(position: Int, convertView: View, parent: ViewGroup ):View = {
       var holder:picCardViewHolder = null
-      val view = convertView
+      var view = convertView
+      if(view == null){
+        view = inflater.inflate(card_layout, null)
+      }
       view
     } 
   }

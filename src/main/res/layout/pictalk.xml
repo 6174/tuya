@@ -40,7 +40,7 @@
         android:id="@+id/pictalk_list"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:visibility="gone"
+        android:visibility="visible"
         android:fadingEdge="none"
         android:cacheColorHint="#00000000"/>
       <include layout="@layout/pic_card"/>

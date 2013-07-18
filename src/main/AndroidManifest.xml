@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:debuggable="true">
 
-        <activity android:label="@string/app_name" android:name=".indexActivity">
+        <activity android:label="@string/app_name" android:name=".picTalkActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -29,8 +29,8 @@
         </activity>
         <activity android:name=".createPicActivity">
         </activity>
-        <activity android:name=".picTalkActivity">
-        </activity>
+       <!--  <activity android:name=".picTalkActivity">
+        </activity> -->
         <activity android:name=".settingActivity">
         </activity>
     </application>
