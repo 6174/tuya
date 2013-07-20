@@ -4,6 +4,7 @@ import android.app.Activity
 import android.os.Bundle
 import android.content.Context
 import android.util.DisplayMetrics
+import android.widget.Toast
 import android.util.Log
 import java.util.Random
 /**
@@ -37,15 +38,18 @@ object util {
 
 	def guid():String = {
 		val len = 20
-		val base = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";   
+	       val base = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";   
 		val baselen = base.length()
-		var str = ""
+		var str = "" 
 		for(i <- 0 until len){
 			val num = rand.nextInt(baselen)
 			str += base.charAt(num)
 		}
 		str
 	}
+	def toast(context:Context, info:String){
+   		Toast.makeText(context, info, Toast.LENGTH_SHORT).show();
+   	}
 }
 
 // public static int dip2px(Context context, float dipValue){ 

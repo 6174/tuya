@@ -12,9 +12,16 @@ import android.view.ViewGroup.LayoutParams
 import android.widget._
 import android.util.Log
 
+import org.json._
 import collection.mutable.HashMap
+
 import java.io.FileNotFoundException
 import java.util.ArrayList
+import java.util.Date
+import net.tsz.afinal._
+import net.tsz.afinal.http._
+import net.tsz.afinal.exception._
+import net.tsz.afinal.bitmap.core._
 
 import com.cxj.util._
 
@@ -100,118 +107,116 @@ class PicContent(val context: Context,val wrapper:ViewGroup) {
 	 */
 	private def init_pic_motion_event_delegater() {
 		PIC.setOnTouchListener(new View.OnTouchListener{
-		 	// val pre_event:MotionEvent = _
-		 	// val cur_event:MotionEvent = _
 	 		var pre_evx = 0
-      var pre_evy = 0
-    	var cur_evx = 0
-    	var cur_evy = 0
-    	val gestureDetector = new GestureDetector(new GestureDetector.OnGestureListener(){
-				def onDown(ev:MotionEvent):Boolean = false
-				def onFling(ev1: MotionEvent, ev2: MotionEvent, vx: Float, vy:Float):Boolean = false
-				def onLongPress(ev:MotionEvent) = logev("onLongPress")
-				def onScroll(ev1:MotionEvent, ev2:MotionEvent, disX:Float, disY:Float):Boolean = false
-				def onShowPress(ev:MotionEvent) = logev("onShowPress")
-				//onSingleTapUp
-				def onSingleTapUp(ev:MotionEvent):Boolean = {
-					handleOnSingleTapUp(ev)
-					false
-				}
-				def logev(t:String, ev:MotionEvent) = {
-					Log.i("chxjia", t + ": " + ev.getX() + "," + ev.getY())
-				}
-				def logev(t:String) = {
-					Log.i("chxjia", t)
-				}
-			})
-			//touch event
-    	def onTouch(v:View, event:MotionEvent):Boolean = {
-    		if(gestureDetector.onTouchEvent(event)) {
-    			Log.i("chxjia", "onSingleTapUp PIC")
-    			return true
-    		}
-    		dragView(v, event)
-    	}
-    	//handleOnSingleTapUp
-    	def handleOnSingleTapUp(event:MotionEvent) = {
-    		if(state != PicContent.STATE_CODE("uneditable")){
-					val x = event.getX().toInt
-				 	val y = event.getY().toInt
-				 	state match{
-				 		case  1 => addText(x, y)
-				 		case  2 => addVoice(x, y)
-				 		case  3 => false
-				 		case _ => false
-				 	}
-    		}
-    	}
-    	//dragView
-    	def dragView(v:View, event:MotionEvent):Boolean = {
-    		//getRawX is according to the screen left-top corner
-	        //getX is according to the widget left-top corner
-	        val ex = event.getRawX().toInt
-	        val ey = event.getRawY().toInt 
-	        // Log.i("chxjia", "touch image" + event.getAction())
-	        // Log.i("chxjia", Array(ex, ey, v.getWidth(), v.getHeight()).mkString(", "))
-	        //when there is no matched case , the activity will shut down
-	        event.getAction() match {
-	          case MotionEvent.ACTION_DOWN => action_touchstart
-	          case MotionEvent.ACTION_MOVE => action_touchmove
-	          case MotionEvent.ACTION_UP => action_touchend
-	          case _ => true
-	        }
+	        var pre_evy = 0
+	    	var cur_evx = 0
+	    	var cur_evy = 0
+	    	val gestureDetector = new GestureDetector(new GestureDetector.OnGestureListener(){
+					def onDown(ev:MotionEvent):Boolean = false
+					def onFling(ev1: MotionEvent, ev2: MotionEvent, vx: Float, vy:Float):Boolean = false
+					def onLongPress(ev:MotionEvent) = logev("onLongPress")
+					def onScroll(ev1:MotionEvent, ev2:MotionEvent, disX:Float, disY:Float):Boolean = false
+					def onShowPress(ev:MotionEvent) = logev("onShowPress")
+					//onSingleTapUp
+					def onSingleTapUp(ev:MotionEvent):Boolean = {
+						handleOnSingleTapUp(ev)
+						false
+					}
+					def logev(t:String, ev:MotionEvent) = {
+						Log.i("chxjia", t + ": " + ev.getX() + "," + ev.getY())
+					}
+					def logev(t:String) = {
+						Log.i("chxjia", t)
+					}
+				})
+				//touch event
+	    	def onTouch(v:View, event:MotionEvent):Boolean = {
+	    		if(gestureDetector.onTouchEvent(event)) {
+	    			Log.i("chxjia", "onSingleTapUp PIC")
+	    			return true
+	    		}
+	    		dragView(v, event)
+	    	}
+	    	//handleOnSingleTapUp
+	    	def handleOnSingleTapUp(event:MotionEvent) = {
+	    		if(state != PicContent.STATE_CODE("uneditable")){
+						val x = event.getX().toInt
+					 	val y = event.getY().toInt
+					 	state match{
+					 		case  1 => addText(x, y)
+					 		case  2 => addVoice(x, y)
+					 		case  3 => false
+					 		case _ => false
+					 	}
+	    		}
+	    	}
+	    	//dragView
+	    	def dragView(v:View, event:MotionEvent):Boolean = {
+	    		//getRawX is according to the screen left-top corner
+		        //getX is according to the widget left-top corner
+		        val ex = event.getRawX().toInt
+		        val ey = event.getRawY().toInt 
+		        // Log.i("chxjia", "touch image" + event.getAction())
+		        // Log.i("chxjia", Array(ex, ey, v.getWidth(), v.getHeight()).mkString(", "))
+		        //when there is no matched case , the activity will shut down
+		        event.getAction() match {
+		          case MotionEvent.ACTION_DOWN => action_touchstart
+		          case MotionEvent.ACTION_MOVE => action_touchmove
+		          case MotionEvent.ACTION_UP => action_touchend
+		          case _ => true
+		        }
 
-	        def action_touchstart = {
-	          // Log.i("chxjia", "touchStart")
-	          pre_evy = ey 
-	          pre_evx = ex 
-	          cur_evy = ey 
-	          cur_evx = ex
-	        }
-	        def action_touchmove = {
-	          // Log.i("chxjia", "touchMove")
-	          val deltaX = cur_evx - pre_evx 
-	          val deltaY = cur_evy - pre_evy
-	          pre_evy = cur_evy
-	          pre_evx = cur_evx
+		        def action_touchstart = {
+		          // Log.i("chxjia", "touchStart")
+		          pre_evy = ey 
+		          pre_evx = ex 
+		          cur_evy = ey 
+		          cur_evx = ex
+		        }
+		        def action_touchmove = {
+		          // Log.i("chxjia", "touchMove")
+		          val deltaX = cur_evx - pre_evx 
+		          val deltaY = cur_evy - pre_evy
+		          pre_evy = cur_evy
+		          pre_evx = cur_evx
 
-	          cur_evx = ex 
-	          cur_evy = ey
+		          cur_evx = ex 
+		          cur_evy = ey
 
-	          var pos_x = deltaX + v.getX()
-	          var pos_y = deltaY + v.getY()
+		          var pos_x = deltaX + v.getX()
+		          var pos_y = deltaY + v.getY()
 
-	          //v.getLeft() postion relative to It's parent
-	          // Log.i("chxjia", v.getLeft())
-	          //bounding box
-	          if(pos_x >= 0) pos_x = 0
-	          if(pos_y >= 0) pos_y = 0
+		          //v.getLeft() postion relative to It's parent
+		          // Log.i("chxjia", v.getLeft())
+		          //bounding box
+		          if(pos_x >= 0) pos_x = 0
+		          if(pos_y >= 0) pos_y = 0
 
-	          if(pos_x + picwidth <= swidth) pos_x = swidth - picwidth 
-	          if(pos_y + picheight <= sheight) pos_y = sheight - picheight 
+		          if(pos_x + picwidth <= swidth) pos_x = swidth - picwidth 
+		          if(pos_y + picheight <= sheight) pos_y = sheight - picheight 
 
-	          if(picwidth <= swidth) pos_x = {
-	          	//center
-	          	(swidth - picwidth)/2
-	          }
-	          if(picheight <= sheight) pos_y = {
-	          	//center
-	          	(sheight - picheight)/2
-	          }
+		          if(picwidth <= swidth) pos_x = {
+		          	//center
+		          	(swidth - picwidth)/2
+		          }
+		          if(picheight <= sheight) pos_y = {
+		          	//center
+		          	(sheight - picheight)/2
+		          }
 
-	          v.setX(pos_x)
-	          v.setY(pos_y)
-	        }
-	        def action_touchend = {
-	          // Log.i("chxjia", "touchend")
-	        }
-	        true
-    	}
+		          v.setX(pos_x)
+		          v.setY(pos_y)
+		        }
+		        def action_touchend = {
+		          // Log.i("chxjia", "touchend")
+		        }
+		        true
+	    	}
 		})
 	}
 
 	/**
-	 *@DESC add text handler
+	 * @DESC add text handler
 	 */
 	def addText(x:Int, y:Int) {
 		// add_tip(x, y)
@@ -222,7 +227,7 @@ class PicContent(val context: Context,val wrapper:ViewGroup) {
 	}
 
 	/**
-	 *@DESC add voice handler
+	 * @DESC add voice handler
 	 */
 	def addVoice(x:Int, y:Int) {
 		Log.i("chxjia", "add voice tip" + "tip_size" + picTips.size.toString)
@@ -232,34 +237,74 @@ class PicContent(val context: Context,val wrapper:ViewGroup) {
 	}
 	
 	/**
-	 *@DESC add voice handler
+	 * @DESC add voice handler
 	 */
 	def addInfo(x:Int, y:Int) {
 
 	}
-
 	/**
-	 *@DESC remove Tip
+	 * @DESC remove Tip
 	 */
 	def removeTip(tip:Tip) = {
 		PIC.removeView(tip.view)
 		picTips -= tip.id
 	} 
-	/*
-	 *@DESC add textNote event
-	 */
-	def initTextNoteEvents(textNote: View){
-
-	} 
 	/**
-	 *@DESC add voice Note event
+	 * @DESC make picContent into JSON
 	 */
-	def initVoiceNoteEvents(voiceNote: View){
-
+	def toJsonString():String = {
+		val picJson = new JSONObject()
+		picJson.put("picId", "picId")
+		picJson.put("time", (new Date()).toString)
+		picJson.put("fromUserId", "570171025@qq.com")
+		picJson.put("toUserId", "1234567@gmail.com")
+		// picJson.put("")
+		picJson.toString
 	}
 
+	private def testJson(){
+		val person = new JSONObject()
+		val phone = new JSONArray()
+
+		phone.put("12343123").put("43523462")
+		person.put("phone", phone)
+		person.put("name", "chxjia")
+		person.put("phone", "haha")
+		person.put("sex", "man")
+		person.put("age", "1")
+
+		Log.i("chxjia", "JSON: " + person.toString)
+		person.toString
+	}
+
+	/**
+	 * @DESC upload image
+	 */
+	private def upLoadPic() = {
+		Log.i("chxjia", "upladPic")
+
+		val params = new AjaxParams()
+		params.put("picId", "picId")
+		params.put("time", (new Date()).toString)
+		params.put("fromUserId", "570171025@qq.com")
+		params.put("toUserId", "1234567@gmail.com")
+		val fh = new FinalHttp()
+		fh.post("http://192.168.51.72:3000", params, new AjaxCallBack(){
+			override def onLoading(count:Long, current:Long) {
+				Log.i("chxjia", "onloading")
+				// onSuccess()
+			}
+			override def onSuccess(t:Nothing){
+				toast(context, "success upload")
+				Log.i("chxjia", "success upload")
+			}
+
+		})
+
+	}
+	testJson()
+	upLoadPic()
 	init_pic_motion_event_delegater()
 }
-
 
  
